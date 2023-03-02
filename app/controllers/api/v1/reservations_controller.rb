@@ -41,7 +41,7 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:name, :price, :description, :image, :type)
+    params.require(:reservation).permit(:date, :user_id, :product_id)
   end
 
   def find_reservation
