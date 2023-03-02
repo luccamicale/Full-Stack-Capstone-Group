@@ -70,6 +70,8 @@ In order to run this project you need:
  git
  yarn
  Nodejs
+ npm install
+ api
 
 ### Setup
 
