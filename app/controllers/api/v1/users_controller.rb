@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   skip_before_action :authenticate_user, only: [:create]
-  before_action :find_user, only: [:show, :update, :destroy]
-  
+  before_action :find_user, only: %i[show update destroy]
+
   def index
     @users = User.all
     render json: @users, status: 200
@@ -16,27 +16,28 @@ class Api::V1::UsersController < ApplicationController
     if @user.save
       render json: @user, status: 201
     else
-      render json: {errors: @user.errors.full_messages}, status: 503
-    end 
+      render json: { errors: @user.errors.full_messages }, status: 503
+    end
   end
 
   def update
     if @user.update(user_params)
       render json: @user, status: 200
     else
-      render json: {errors: @user.errors.full_messages}, status: 503
+      render json: { errors: @user.errors.full_messages }, status: 503
     end
   end
 
   def destroy
     if @user.destroy
-      render json: {message: "User deleted"}, status: 200
+      render json: { message: 'User deleted' }, status: 200
     else
-      render json: {errors: @user.errors.full_messages}, status: 503
+      render json: { errors: @user.errors.full_messages }, status: 503
     end
   end
 
   private
+
   def user_params
     params.permit(:user_name, :email, :password, :name, :age)
   end

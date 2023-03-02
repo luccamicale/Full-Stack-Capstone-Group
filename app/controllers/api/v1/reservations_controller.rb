@@ -1,15 +1,15 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_reservation, only: [:show, :update, :destroy, :create]
+  before_action :find_reservation, only: %i[show update destroy create]
 
   def index
     @reservations = Reservation.where(user: @current_user)
     render json: @reservations, status: 200
   end
 
-   def show
+  def show
     render json: @reservation, status: 200
-   end
+  end
 
   def create
     @reservation = reservation.new(reservation_params)
@@ -18,7 +18,7 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation.save
       render json: @reservation, status: 201
     else
-      render json: {errors: @reservation.errors.full_messages}, status: 503
+      render json: { errors: @reservation.errors.full_messages }, status: 503
     end
   end
 
@@ -26,26 +26,25 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation.update(reservation_params)
       render json: @reservation, status: 200
     else
-      render json: {errors: @reservation.errors.full_messages}, status: 503
+      render json: { errors: @reservation.errors.full_messages }, status: 503
     end
   end
 
   def destroy
     if @reservation.destroy
-      render json: {message: "reservation deleted"}, status: 200
+      render json: { message: 'reservation deleted' }, status: 200
     else
-      render json: {errors: @reservation.errors.full_messages}, status: 503
+      render json: { errors: @reservation.errors.full_messages }, status: 503
     end
   end
 
   private
 
   def reservation_params
-    params.require(:reservation).permit( :name, :price, :description, :image, :type)
+    params.require(:reservation).permit(:name, :price, :description, :image, :type)
   end
 
   def find_reservation
     @reservation = reservation.find(params[:id])
   end
 end
-
