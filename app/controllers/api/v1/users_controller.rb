@@ -4,7 +4,8 @@ class Api::V1::UsersController < ApplicationController
 
   def index
     @users = User.all
-     render json: @users, only: [:name, :user_name, :email, :age], include: [:reservations => {:include => :product}], status: 200
+    render json: @users, only: %i[name user_name email age], include: [reservations: { include: :product }],
+           status: 200
   end
 
   def show

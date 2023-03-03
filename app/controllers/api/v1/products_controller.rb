@@ -4,11 +4,11 @@ class Api::V1::ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    render json: @products, only:[:name, :price, :description, :category, :image], status: 200
+    render json: @products, only: %i[name price description category image], status: 200
   end
 
   def show
-    render json: @product, only:[:name, :price, :description, :category, :image], status: 200
+    render json: @product, only: %i[name price description category image], status: 200
   end
 
   def create

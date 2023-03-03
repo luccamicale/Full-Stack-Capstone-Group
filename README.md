@@ -8,24 +8,25 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[Full Stack Capstone\] ](#-full-stack-capstone-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 \[Live Demo Link\] ](#-live-demo-link-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [� Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 
 # 📖 [Full Stack Capstone] <a name="about-project"></a>
@@ -114,7 +115,12 @@ You can deploy this project using:
 - LinkedIn: [luccamicale](https://www.linkedin.com/in/luccamicale/)
 - Twitter: [@luccamicale_](https://twitter.com/LuccaMicale_)
 
-## 👥 Authors <a name="authors"></a>
+👤 **Ndorrh Oswald Ebu**
+
+- GitHub: [@ndorrh](https://github.com/ndorrh)
+- Twitter: [@Ndorrh Ebu](https://twitter.com/NdorrhEbu)
+- LinkedIn: [ndorrh](https://linkedin.com/in/ndorrhoswaldebu)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
