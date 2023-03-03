@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_202546) do
     t.string "image"
     t.decimal "price"
     t.text "description"
-    t.string "type"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_202546) do
     t.string "user_name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "password_digest", default: "", null: false
+    t.string "role", default: "customer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
