@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
       resources :products
+      resources :reservations
       post '/auth/login', to: 'authentication#login'
     end
   end
