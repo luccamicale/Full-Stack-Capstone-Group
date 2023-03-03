@@ -1,19 +1,18 @@
 class Api::V1::ProductsController < ApplicationController
   before_action :authenticate_user
-  before_action :find_product, only: %i[show update destroy create]
+  before_action :find_product, only: %i[show update destroy]
 
   def index
-    @products = Product.where(user: @current_user)
-    render json: @products, status: 200
+    @products = Product.all
+    render json: @products, only:[:name, :price, :description, :category, :image], status: 200
   end
 
   def show
-    render json: @product, status: 200
+    render json: @product, only:[:name, :price, :description, :category, :image], status: 200
   end
 
   def create
     @product = Product.new(product_params)
-    @product.user = @current_user
 
     if @product.save
       render json: @product, status: 201
@@ -41,7 +40,7 @@ class Api::V1::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :image, :type)
+    params.require(:product).permit(:name, :price, :description, :image, :category)
   end
 
   def find_product
