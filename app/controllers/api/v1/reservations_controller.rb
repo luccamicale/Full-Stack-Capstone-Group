@@ -1,9 +1,9 @@
 class Api::V1::ReservationsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_reservation, only: %i[show update destroy create]
+  before_action :authenticate_user
+  before_action :find_reservation, only: %i[show update destroy]
 
   def index
-    @reservations = Reservation.where(user: @current_user)
+    @reservations = Reservation.all
     render json: @reservations, status: 200
   end
 
@@ -12,7 +12,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = reservation.new(reservation_params)
+    @reservation = Reservation.new(reservation_params)
     @reservation.user = @current_user
 
     if @reservation.save
@@ -41,10 +41,10 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:date, :user_id, :product_id)
+    params.require(:reservation).permit(:date, :product_id)
   end
 
   def find_reservation
-    @reservation = reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
   end
 end
