@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   resources :reservations
   resources :users
   get 'root/index'
