@@ -7,4 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  namespace :api do
+    namespace :v1 do
+      get 'reservations', to: 'reservations#index'
+      get 'users', to: 'users#index'
+      get 'products', to: 'products#index'
+    end
+  end
 end
