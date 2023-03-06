@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :products
   resources :reservations
   resources :users
-  get 'root/index'
+  root 'root#index'
   
   namespace :api do
     namespace :v1 do
