@@ -3,7 +3,7 @@ import myReducer from './home/Home';
 
 const store = configureStore({
   reducer: {
-    greetings: myReducer,
+    homes: myReducer,
   },
 });
 

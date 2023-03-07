@@ -3,19 +3,19 @@ import axios from 'axios';
 
 const url = 'http://127.0.0.1:3000/api/v1/products';
 
-export const fetchGreetings = createAsyncThunk('FETCHMESSAGE', () => axios.get(url)
+export const fetchHomes = createAsyncThunk('FETCHMESSAGE', () => axios.get(url)
   .then((response) => {
-    const greeting = response.data;
-    console.log(greeting)
-    return greeting;
+    const home = response.data;
+    console.log(home)
+    return home;
   }));
 
-const greetingsSlice = createSlice({
-  name: 'greetings',
+const homesSlice = createSlice({
+  name: 'homes',
   initialState: [],
   extraReducers: (builder) => {
-    builder.addCase(fetchGreetings.fulfilled, (_, action) => action.payload);
+    builder.addCase(fetchHomes.fulfilled, (_, action) => action.payload);
   },
 });
 
-export default greetingsSlice.reducer;
+export default homesSlice.reducer;

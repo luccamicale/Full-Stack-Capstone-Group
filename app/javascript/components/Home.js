@@ -1,24 +1,25 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchGreetings } from '../redux/home/Home';
+import { fetchHomes } from '../redux/home/Home';
 
 function Home() {
-  const greeting = useSelector((state) => state.greetings);
+  const home = useSelector((state) => state.homes);
   const dispatch = useDispatch();
-  console.log(greeting)
+  console.log(home)
 
   useEffect(() => {
-    dispatch(fetchGreetings());
+    dispatch(fetchHomes());
   }, [dispatch]);
 
   return (
     <div>
-      {greeting.map((greeting) =>
+      {home.map((home) =>
         <div>
-          <h2>{greeting.name}</h2>
-          <h3>{greeting.id}</h3>
-          <h3>{greeting.description}</h3>
-          <h4>{greeting.price}</h4>
+          <h2>{home.name}</h2>
+          <h3>{home.id}</h3>
+          <h3>{home.description}</h3>
+          <h4>{home.price}</h4>
+          <img src={home.image}></img>
         </div>
 
       )}
