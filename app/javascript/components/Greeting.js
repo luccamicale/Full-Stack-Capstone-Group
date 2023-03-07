@@ -19,8 +19,6 @@ const Greeting = () => {
         <h3>{greeting.id}</h3>
         <h3>{greeting.description}</h3>
         <h4>{greeting.price}</h4>
-        <img>{greeting.image}</img>
-        
       </div>
       
       )}
