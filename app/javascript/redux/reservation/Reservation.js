@@ -6,7 +6,7 @@ const url = 'http://127.0.0.1:3000/api/v1/reservations';
 export const fetchReservations = createAsyncThunk('FETCHRESERVATIONS', () => axios.get(url)
   .then((response) => {
     const reservations = response.data;
-    console.log(reservations)
+    //console.log(reservations)
     return reservations;
   }));
 
