@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchGreetings } from '../redux/greetings/Greetings';
 
 function Home() {
-    return (
-      <div className="home">
-        <h1>Home</h1>
-      </div>
-    );
+  const greeting = useSelector((state) => state.greetings);
+  const dispatch = useDispatch();
+  console.log(greeting)
+
+  useEffect(() => {
+    dispatch(fetchGreetings());
+  }, [dispatch]);
+
+  return (
+    <div>
+      {greeting.map((greeting) =>
+        <div>
+          <h2>{greeting.name}</h2>
+          <h3>{greeting.id}</h3>
+          <h3>{greeting.description}</h3>
+          <h4>{greeting.price}</h4>
+        </div>
+
+      )}
+    </div>
+  );
   }
   
   export default Home;
