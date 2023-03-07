@@ -33,6 +33,11 @@ function NavBar() {
             Reservations
           </NavLink>
         </li>
+        <li>  
+          <NavLink className="item" to="/Greeting">
+            Greetings
+          </NavLink>
+        </li>
      </ul>
     
     </div>
