@@ -10,7 +10,7 @@ function NavBar() {
 
   return (
     <div className="navbar">
-      
+
       <ul className="ul-nav">
         <li className="link-item">
           <NavLink className="item" to="/">
@@ -22,19 +22,19 @@ function NavBar() {
             Home
           </NavLink>
         </li>
- 
-        <li>  
+
+        {/* <li>
           <NavLink className="item" to="/Details">
             Details
           </NavLink>
-        </li>
-        <li>  
+        </li> */}
+        <li>
           <NavLink className="item" to="/Reservations">
             Reservations
           </NavLink>
         </li>
      </ul>
-    
+
     </div>
   );
 }
