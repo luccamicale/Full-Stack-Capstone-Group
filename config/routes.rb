@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'reservations', to: 'reservations#index'
+      post 'reservations', to: 'reservations#create'
       get 'users', to: 'users#index'
       get 'products', to: 'products#index'
     end
