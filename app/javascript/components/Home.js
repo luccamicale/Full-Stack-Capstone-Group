@@ -28,16 +28,15 @@ function Home() {
 
   return (
     <div>
+      <h1 className='latest-model'>Latest Models</h1>
+      <hr></hr>
+      <h4 className='tesla-model'>Please select a Tesla Model</h4>
       {home.map((home) =>
-
 (  <Link to={`${home.id}`} key={home.id}>
-{/* <button type='button' onClick={handleDetailsClick} className="btn-to-details"> */}
         <div className='container'>
-            <h1 className='latest-model'>Latest Models</h1>
-            <h4 className='tesla-model'>Please select a Tesla Model</h4>
+            <img className='image' src={home.image}></img>
             <h2>{home.name}</h2>
             <h3>{home.description}</h3>
-            <img className='image' src={home.image}></img>
         </div>
 
         {/* </button> */}

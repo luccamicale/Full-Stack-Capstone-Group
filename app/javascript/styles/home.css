@@ -24,12 +24,21 @@ h4 {
   border-radius: 6px;
   margin-top: 5%;
   text-align: center;
+  margin: 25px;
 }
 
 .tesla-model {
   color: #a9a9a9;
+  margin-left: 50%;
+  margin-left: 25%;
 }
 
 .latest-model {
   color: #252525;
+  margin-left: 25%;
+}
+
+hr {
+  color: #252525;
+  width: 80%;
 }
