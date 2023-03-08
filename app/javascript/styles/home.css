@@ -1,0 +1,22 @@
+a {
+  text-decoration: none;
+}
+
+h3 {
+  color: #252525;
+}
+
+h4 {
+  color: #252525;
+}
+  
+.image {
+  width: 100%;
+}
+
+.container {
+  border: 2px solid #252525;
+  border-radius: 6px;
+  margin-top: 5%;
+  text-align: center;
+}
