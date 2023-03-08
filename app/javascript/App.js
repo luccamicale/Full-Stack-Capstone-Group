@@ -21,7 +21,6 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Home/:id" element={<Detail />} />
-        <Route path="/Reservations" element={<Reservations />} />  
         <Route path="/Reservations" element={<Reservations setProduct={setProduct} setUser={setUser} />} />
         <Route path="/reservationForm" element={<ReservationForm product={product} user={user} />} />
       </Routes>
