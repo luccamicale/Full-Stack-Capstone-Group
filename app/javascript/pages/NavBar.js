@@ -13,7 +13,7 @@ function NavBar() {
       
       <ul className="ul-nav">
         <li className="link-item">
-          <NavLink className="item" to="/">
+          <NavLink className="item" to="/landing">
             INSERT LOGO HERE
           </NavLink>
         </li>

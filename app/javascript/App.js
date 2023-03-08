@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Landing from './components/Landing';
 import Details from './components/Details';
 import Reservations from './components/Reservations';
+import Login from './components/Login';
 
 function App() {
  // const dispatch = useDispatch();
@@ -15,12 +16,12 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/Landing" element={<Landing />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Details" element={<Details />} />
         <Route path="/Reservations" element={<Reservations />} />
       </Routes>
-
     </div>
   );
 }
