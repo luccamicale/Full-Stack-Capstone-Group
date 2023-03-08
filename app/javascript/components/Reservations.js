@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchReservations } from "../redux/reservation/Reservation";
+import { NavLink } from "react-router-dom";
 
-function Reservations() {
-  const reservations = useSelector((state) => state.reservations);
+function Reservations({setProduct, setUser}) {
+  const {reservations, getReservationStatus} = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   console.log(reservations)
 
@@ -11,8 +12,11 @@ function Reservations() {
     dispatch(fetchReservations());
   }, [dispatch]);
 
+  if (getReservationStatus === "pending") return <div className="reservation"> <span class="loader"></span></div>
+
     return (
       <div className="reservations">
+        <NavLink to="/reservationForm" onClick={() => setProduct(1)}>Reserve</NavLink>
         <h1>My Reservations</h1>
         {reservations.map((reservation) =>
           <div>
