@@ -9,6 +9,12 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if(name == '' || password == '' ) {
+            setError(true)
+            return
+        }
+        setError(false)
     }
 
     return (
@@ -17,7 +23,6 @@ function Login() {
         <form className="Form"
             onSubmit={handleSubmit}
         >
-          
             <input 
                 type='text' 
                 value={name}
@@ -30,6 +35,7 @@ function Login() {
             />
             <button>Login</button>
         </form>
+        {error && <p>Required fields</p>}
       </section>
     );
   }
