@@ -1,0 +1,19 @@
+.landing{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://i.ibb.co/HBmGSNX/landingmobile.png");
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+    align-self: flex-end;
+    width: auto;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.logo img{
+    width: 50vw;
+}

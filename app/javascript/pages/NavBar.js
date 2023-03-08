@@ -24,11 +24,6 @@ function NavBar() {
         </li>
  
         <li>  
-          <NavLink className="item" to="/Details">
-            Details
-          </NavLink>
-        </li>
-        <li>  
           <NavLink className="item" to="/Reservations">
             Reservations
           </NavLink>
