@@ -1,7 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
-    render json: @reservations, status: 200
+    render json: @reservations, include: [:product],  status: 200
   end
 
   def show

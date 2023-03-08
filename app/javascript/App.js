@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './pages/NavBar';
 import Home from './components/Home';
@@ -8,10 +8,10 @@ import Reservations from './components/Reservations';
 import ReservationForm from './components/ReservationForm';
 
 function App() {
-  const [user, setUser ]= useState(1);
+  const [user, setUser] = useState(1);
   const [product, setProduct] = useState(null);
- // const dispatch = useDispatch();
- // dispatch(retrieveRocket());
+  // const dispatch = useDispatch();
+  // dispatch(retrieveRocket());
 
   return (
     <div className="App">
