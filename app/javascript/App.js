@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './pages/NavBar';
 import Home from './components/Home';
@@ -8,15 +8,13 @@ import Reservations from './components/Reservations';
 import Login from './components/Login';
 
 function App() {
- // const dispatch = useDispatch();
- // dispatch(retrieveRocket());
-
   return (
     <div className="App">
+      
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login />} setUser={setUser} />
         <Route path="/Landing" element={<Landing />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Details" element={<Details />} />

@@ -1,43 +1,37 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from 'react';
 
 function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
 
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState(false);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+    setLoggedIn(true);
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        if(name == '' || password == '' ) {
-            setError(true)
-            return
-        }
-        setError(false)
-    }
-
+  if (loggedIn) {
+    return <h1>Welcome, {username}!</h1>;
+  } else {
     return (
-      <section className="login">
-        <h1>Login</h1>
-        <form className="Form"
-            onSubmit={handleSubmit}
-        >
-            <input 
-                type='text' 
-                value={name}
-                onChange={e => setName(e.target.value)}
-            />
-            <input
-                 type='password' 
-                 value={password}
-                 onChange={e => setPassword(e.target.value)}
-            />
-            <button>Login</button>
-        </form>
-        {error && <p>Required fields</p>}
-      </section>
+      <form onSubmit={handleLogin}>
+        <label>
+          Username:
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label>
+        <br />
+        <button type="submit">Log In</button>
+      </form>
     );
   }
-  
-  export default Login;
+}
+
+export default Login;
+
