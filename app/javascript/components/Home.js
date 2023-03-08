@@ -33,12 +33,12 @@ function Home() {
 (  <Link to={`${home.id}`} key={home.id}>
 {/* <button type='button' onClick={handleDetailsClick} className="btn-to-details"> */}
         <div className='container'>
+            <h1 className='latest-model'>Latest Models</h1>
+            <h4 className='tesla-model'>Please select a Tesla Model</h4>
             <h2>{home.name}</h2>
 
             <h3>{home.id}</h3>
             <h3>{home.description}</h3>
-            <h4>{home.price}</h4>
-
             <img className='image' src={home.image}></img>
         </div>
 

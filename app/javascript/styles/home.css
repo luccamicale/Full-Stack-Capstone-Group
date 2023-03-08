@@ -2,8 +2,12 @@ a {
   text-decoration: none;
 }
 
+h2 {
+    color: #252525;
+}
+
 h3 {
-  color: #252525;
+  color: #a9a9a9;
 }
 
 h4 {
@@ -19,4 +23,12 @@ h4 {
   border-radius: 6px;
   margin-top: 5%;
   text-align: center;
+}
+
+.tesla-model {
+  color: #a9a9a9;
+}
+
+.latest-model {
+  color: #252525;
 }
