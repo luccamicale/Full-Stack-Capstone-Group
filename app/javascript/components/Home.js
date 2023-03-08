@@ -36,8 +36,6 @@ function Home() {
             <h1 className='latest-model'>Latest Models</h1>
             <h4 className='tesla-model'>Please select a Tesla Model</h4>
             <h2>{home.name}</h2>
-
-            <h3>{home.id}</h3>
             <h3>{home.description}</h3>
             <img className='image' src={home.image}></img>
         </div>
