@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { reserveProduct } from '../redux/reservation/Reservation';
 import { useNavigate } from 'react-router-dom';
 import { updateReservationStatus } from '../redux/reservation/Reservation';
+import { cities } from '../redux/cities';
 
 
 const ReservationForm = ({product, user}) => {
@@ -11,19 +12,23 @@ const ReservationForm = ({product, user}) => {
   const reserveStatus = useSelector((state) => state.reservations.reserveStatus);
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
+  const [location, setLocation] = useState('');
   const [successMsg, setSuccess] = useState(false);
-
-  console.log(reserveStatus)
+  console.log(cities)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const reservationData = {
-      date,
-      time,
-      user_id: user,
-      product_id: product
+    if(date !== '' && time !== '' && location !== '') {
+      const reservationData = {
+        date,
+        time,
+        user_id: user,
+        product_id: product
+      }
+      dispatch(reserveProduct(reservationData))
+    } else {
+      alert("please fill all fields")
     }
-    dispatch(reserveProduct(reservationData));
   }
   
   useEffect(() => {
@@ -50,6 +55,15 @@ const ReservationForm = ({product, user}) => {
         <p>Please Select time</p>
         <input type="time" onChange={(e) => setTime(e.target.value)} value={time} />
         <p>you selected the time: {time}</p>
+      </div>
+
+      <div className="select-container">
+        <select value={location} onChange={(e) => setLocation(e.target.value)}>
+          {cities.map((city) => (
+            <option value={city.name} >{city.name}</option>
+          ))}
+        </select>
+        <p>you selected the city: {location}</p>
       </div>
 
       <button type="submit">Reserve{(reserveStatus === "pending") && <span class="loader"></span>}</button>
