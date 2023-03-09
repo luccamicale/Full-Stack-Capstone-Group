@@ -1,12 +1,12 @@
 
- @import 'components/Detail.css';
+@import 'components/Detail.css';
 
- :root {
- --green: #97bf0f;
- --yellow: #ffc600;
- --blue: #10bbb5;
- --black: #252525;
- --white: #fff;
+:root {
+  --green: #97bf0f;
+  --yellow: #ffc600;
+  --blue: #10bbb5;
+  --black: #252525;
+  --white: #fff;
 }
 
 * {
