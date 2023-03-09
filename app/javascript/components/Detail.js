@@ -23,12 +23,21 @@ function Detail() {
 
         <div className='product-wrapper'>
           <img src={product.image} className="product-image"></img>
-          <h2>{product.name}</h2>
-          <h3>{product.id}</h3>
-          <h3>{product.description}</h3>
-          <h4>{product.price}</h4>
+         <div className='body-description'>
+         <h3 className='product-name'>{product.name}</h3>
 
-          <button type='button'> Reserve</button>
+          <div className='data-row'>
+            <p className='text-label'>
+              Product price
+            </p>
+            <p>
+              {product.price}
+            </p>
+          </div>
+
+          <button type='button' className='btn-reserve-from-detail'> Reserve</button>
+
+         </div>
         </div>
 
   );

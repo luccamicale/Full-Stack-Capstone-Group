@@ -13,7 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--white);
 }
 
 html {
@@ -24,9 +23,11 @@ html {
 .App {
   min-width: 375px;
   max-width: 767.98px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 100vh;
+  border: 3px solid #b9b6b6;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 30px auto;
 }
 
 .loader {
