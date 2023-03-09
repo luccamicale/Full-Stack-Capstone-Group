@@ -9,7 +9,6 @@ import './reservationForm.css'
 const ReservationForm = ({ product, user, setProduct }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const reserveStatus = useSelector(
     (state) => state.reservations.reserveStatus
   );
@@ -18,10 +17,23 @@ const ReservationForm = ({ product, user, setProduct }) => {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [successMsg, setSuccess] = useState(false);
+  const [bgImg, setBgImg] = useState('');
+
+  console.log(product)
+
+  useEffect(() => {
+    if (product !== null) {
+      const filter = products.filter((prod) => prod.id === parseInt(product));
+      console.log(filter)
+      if(filter.length > 0) {
+        setBgImg(filter[0].image)
+      } else {setBgImg('')}
+    }
+  }, [product, products]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (date !== "" && location !== "" && user !== null && product !== null) {
+    if (date !== "" && location !== "" && user !== null && product !== null && product !== 'null') {
       const reservationData = {
         date,
         city: location,
@@ -46,42 +58,45 @@ const ReservationForm = ({ product, user, setProduct }) => {
   }, [reserveStatus, navigate, dispatch]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Reserve A Tesla Car</h1>
+    <div className="reservationForm-container" style={{ backgroundImage: `url(${bgImg})` }}>
+
       <p>{successMsg && "Product Reserved Successfully"}</p>
-      <p>You are reserving the car: {product}</p>
-      {(product === null ) && <div className="select-container">
-        <p>Please Select a product</p>
-        <select value={product} onChange={(e) => setProduct(e.target.value)} >
-          {products.map((product) => (
-            <option value={product.id}>{product.name}</option>
-          ))}
-        </select>
-      </div>}
+      <h1>RESERVE A CAR</h1>
+      <p>There are many models of the tesla car please select a car model, reservation date, and city to book a test right of any of the model if it is available in your city</p>
 
-      <div>
-        <p>Please Select date</p>
-        <input
-          type="date"
-          onChange={(e) => setDate(e.target.value)}
-          value={date}
-        />
-        <p>you selected the date: {date}</p>
-      </div>
+      <form onSubmit={handleSubmit}>
 
-      <div className="select-container">
-        <select value={location} onChange={(e) => setLocation(e.target.value)}>
-          {cities.map((city) => (
-            <option value={city.name}>{city.name}</option>
-          ))}
-        </select>
-        <p>you selected the city: {location}</p>
-      </div>
+         <div className="select-container">
+          <select value={product} onChange={(e) => { setProduct(e.target.value)}} >
+            <option value={'null'}>Select car</option>
+            {products.map((product) => (
+              <option value={product.id}>{product.name}</option>
+            ))}
+          </select>
+        </div>
 
-      <button type="submit">
-        Reserve{reserveStatus === "pending" && <span class="loader"></span>}
-      </button>
-    </form>
+        <div>
+          <input
+            type="date"
+            onChange={(e) => setDate(e.target.value)}
+            value={date}
+          />
+        </div>
+
+        <div className="select-container">
+          <select value={location} onChange={(e) => setLocation(e.target.value)}>
+            <option value={''}>Select city</option>
+            {cities.map((city) => (
+              <option value={city.name}>{city.name}</option>
+            ))}
+          </select>
+        </div>
+
+        <button type="submit">
+          Book Now{reserveStatus === "pending" && <span class="loader"></span>}
+        </button>
+      </form>
+    </div>
   );
 };
 

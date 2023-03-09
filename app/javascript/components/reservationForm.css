@@ -1,0 +1,124 @@
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  border-width: 3px 2px 3px 2px;
+  border-style: solid dotted solid dotted;
+  border-color: #de3500 rgba(255, 255, 255, 0.3) #1dbe28 rgba(151, 107, 93, 0.3);
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: 1s rotate linear infinite;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+  transform: translate(-10px, 19px) rotate(-35deg);
+}
+
+.loader::after {
+  border-color: #de3500 #0000 #0000 #0000;
+  transform: translate(32px, 3px) rotate(-35deg);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.reservationForm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+  background-color: #90bd00;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.reservationForm-container h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+}
+
+form {
+  color: #fff;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservationForm-container p {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+
+form input,
+select {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #90bd00;
+  color: #fff;
+}
+
+form div {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: #fff 1px solid;
+  padding: 3px 10px;
+  background-color: #90bd00;
+  height: 25px;
+}
+
+form button {
+  background-color: #fff;
+  color: #90bd00;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: #fff 1px solid;
+  height: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    flex-wrap: wrap;
+  }
+
+  .reservationForm-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .reservationForm-container p {
+    font-size: 14px;
+    width: 80%;
+  }
+}

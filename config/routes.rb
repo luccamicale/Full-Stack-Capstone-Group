@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'reservations', to: 'reservations#index'
       post 'reservations', to: 'reservations#create'
+      post 'signup', to: 'users#create'
       get 'users', to: 'users#index'
       get 'products', to: 'products#index'
       get 'products/:id', to: 'products#show'
