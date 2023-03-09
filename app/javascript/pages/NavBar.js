@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import '../components/navbar.css'
+import logo from '../components/img/logo.gif';
 
 function NavBar() {
 
@@ -17,7 +18,7 @@ function NavBar() {
         <ul className="ul-nav">
         <li className="link-item">
           <NavLink className="item" to="/"onClick={handleClick}>
-            INSERT LOGO HERE
+          <img src={logo} alt="TESLA" className='menulogo'/>
           </NavLink>
         </li>
         <li className="link-item">
