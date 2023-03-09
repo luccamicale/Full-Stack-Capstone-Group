@@ -11,7 +11,7 @@ class Api::V1::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.user = @current_user
+    # @product.user = @current_user
 
     if @product.save
       render json: @product, status: 201
@@ -39,7 +39,7 @@ class Api::V1::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:date, :product_id)
+    params.require(:product).permit(:name, :image, :price, :description)
   end
 
   def find_product
