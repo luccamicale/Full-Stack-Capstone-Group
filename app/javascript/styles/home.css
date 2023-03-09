@@ -6,9 +6,13 @@ h2 {
   color: #252525;
 }
 
-h3 {
+.product-description {
   color: #a9a9a9;
   font-size: 15px;
+}
+
+.home-container {
+  width: 94%;
 }
 
 h4 {

@@ -85,11 +85,11 @@ a {
     color: black;
   }
 
-  a:hover {
+  .link-item:hover {
     background-color: #ffc600;
   }
 
-  a:active {
+  .link-item:active {
     background-color: #ffc600;
   }
 }
