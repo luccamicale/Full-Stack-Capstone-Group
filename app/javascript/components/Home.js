@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchHomes } from '../redux/home/Home';
 import '../styles/home.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -62,6 +60,6 @@ function Home() {
       </Slider>
     </div>
   );
-  }
+}
 
-  export default Home;
+export default Home;

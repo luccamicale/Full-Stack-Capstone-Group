@@ -4,7 +4,7 @@ import React from 'react';
 //import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({setProduct}) {
  // const dispatch = useDispatch();
  // dispatch(retrieveRocket());
 
@@ -23,11 +23,11 @@ function NavBar() {
           </NavLink>
         </li>
 
-        {/* <li>
-          <NavLink className="item" to="/Details">
-            Details
+        {<li>
+          <NavLink className="item" to="/reservationForm" onClick={() => setProduct(null)}>
+            Reserve
           </NavLink>
-        </li> */}
+        </li>}
         <li>
           <NavLink className="item" to="/Reservations">
             Reservations

@@ -22,16 +22,30 @@ export const reserveProduct = createAsyncThunk(
         return response;
       });
 
+export const cancelReservation = createAsyncThunk(
+  'reservations/cancelReservation',
+  async (reservationId) => {
+    const requestOptions = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+    };
+    const response = await fetch(`${url}/${reservationId}`, requestOptions)
+      .then((data) => data.json())
+    return response;
+  });      
+
 const reservationSlice = createSlice({
   name: 'reservation',
   initialState: {
     reservations: [],
     reserveStatus : '',
-    getReservationStatus: ''
+    getReservationStatus: '',
+    cancelStatus: ''
   },
   reducers: {
     updateReservationStatus: (state, action) => {
       state.reserveStatus = action.payload;
+      state.cancelStatus = action.payload;
       return state;
     },
   },
@@ -61,6 +75,20 @@ const reservationSlice = createSlice({
     .addCase(reserveProduct.fulfilled, (state, action) => {
       if (action.payload.date != null) {
         state.reserveStatus = "fulfilled"
+      }
+      return state
+    })
+    .addCase(cancelReservation.pending, (state, action) => {
+      state.cancelStatus = "pending"
+      return state
+    })
+    .addCase(cancelReservation.rejected, (state, action) => {
+      state.cancelStatus = "rejected"
+      return state
+    })
+    .addCase(cancelReservation.fulfilled, (state, action) => {
+      if (action.payload.message == 'reservation deleted') {
+        state.cancelStatus = "fulfilled"
       }
       return state
     })
