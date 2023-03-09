@@ -28,8 +28,6 @@ function NavBar() {
             Home
           </NavLink>
         </li>
-
-
         {<li>
           <NavLink className="item" to="/reservationForm" onClick={() => setProduct(null)}>
             Reserve
@@ -42,7 +40,7 @@ function NavBar() {
         </li>
      </ul>
 
-
+        </div>
     </div>
   );
 }
