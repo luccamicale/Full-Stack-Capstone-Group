@@ -19,8 +19,6 @@ const ReservationForm = ({ product, user, setProduct }) => {
   const [successMsg, setSuccess] = useState(false);
   const [bgImg, setBgImg] = useState('');
 
-  console.log(product)
-
   useEffect(() => {
     if (product !== null) {
       const filter = products.filter((prod) => prod.id === parseInt(product));
