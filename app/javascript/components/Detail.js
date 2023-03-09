@@ -2,10 +2,13 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProduct } from '../redux/detail/Detail';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import '../../assets/stylesheets/components/Detail.css';
 
 function Detail() {
+  const navigate = useNavigate();
+  
   const product = useSelector((state) => state.product);
   console.log(`product in details page= ${product}`);
   const dispatch = useDispatch();
@@ -40,7 +43,8 @@ function Detail() {
          </div>
         </div>
 
-  );
-  }
 
-  export default Detail;
+  );
+}
+
+export default Detail;

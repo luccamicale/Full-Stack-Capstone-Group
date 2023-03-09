@@ -1,33 +1,38 @@
-import React from 'react';
-//import { Routes, Route } from 'react-router-dom';
-
-//import { useDispatch } from 'react-redux';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import '../components/navbar.css'
+import logo from '../components/img/logo.gif';
+
 
 function NavBar() {
- // const dispatch = useDispatch();
- // dispatch(retrieveRocket());
+
+  const [clicked, setClicked] = useState(false)
+
+  const handleClick = () => {
+    setClicked(!clicked)
+  }
 
   return (
-    <div className="navbar">
+    <div className='nav' id="navbar">
+       <div className="menuButton" id="menuButton" onClick={handleClick}><p>Menu</p></div>
+       <div className={`menu ${clicked ? 'active' : ''}`}>
+        <ul className="ul-nav">
 
-      <ul className="ul-nav">
         <li className="link-item">
-          <NavLink className="item" to="/">
-            INSERT LOGO HERE
+          <NavLink className="item" to="/"onClick={handleClick}>
+          <img src={logo} alt="TESLA" className='menulogo'/>
           </NavLink>
         </li>
         <li className="link-item">
-          <NavLink className="item" to="/Home">
+          <NavLink className="item" to="/Home"onClick={handleClick}>
             Home
           </NavLink>
         </li>
-
-        {/* <li>
-          <NavLink className="item" to="/Details">
-            Details
+        {<li>
+          <NavLink className="item" to="/reservationForm" onClick={() => setProduct(null)}>
+            Reserve
           </NavLink>
-        </li> */}
+        </li>}
         <li>
           <NavLink className="item" to="/Reservations">
             Reservations
@@ -35,6 +40,7 @@ function NavBar() {
         </li>
      </ul>
 
+        </div>
     </div>
   );
 }
