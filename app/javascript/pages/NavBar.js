@@ -23,16 +23,18 @@ function NavBar() {
           </NavLink>
         </li>
 
-        {/* <li>
-          <NavLink className="item" to="/Details">
-            Details
-          </NavLink>
-        </li> */}
         <li>
           <NavLink className="item" to="/Reservations">
             Reservations
           </NavLink>
         </li>
+
+        <li>
+          <NavLink className="item" to="/new-product">
+            Add product
+          </NavLink>
+        </li>
+
      </ul>
 
     </div>

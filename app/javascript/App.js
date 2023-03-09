@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import Detail from './components/Detail';
 import Reservations from './components/Reservations';
 import ReservationForm from './components/ReservationForm';
+import ProductForm from './components/ProductForm';
 
 function App() {
   const [user, setUser ]= useState(1);
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Home/:id" element={<Detail />} />
         <Route path="/Reservations" element={<Reservations setProduct={setProduct} setUser={setUser} />} />
         <Route path="/reservationForm" element={<ReservationForm product={product} user={user} />} />
+        <Route path="/new-product" element={<ProductForm  /> } />
       </Routes>
 
     </div>
