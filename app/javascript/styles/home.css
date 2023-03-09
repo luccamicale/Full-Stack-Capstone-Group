@@ -25,6 +25,11 @@ h4 {
   margin: 25px;
   margin-top: 5%;
   text-align: center;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .tesla-model {
@@ -41,4 +46,16 @@ h4 {
 hr {
   color: #252525;
   width: 80%;
+}
+
+@media only screen and (min-width: 768px) {
+  .tesla-model {
+    color: #a9a9a9;
+    margin-left: 42%;
+  }
+
+  .latest-model {
+    color: #252525;
+    margin-left: 42%;
+  }
 }
