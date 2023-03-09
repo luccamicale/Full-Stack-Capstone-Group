@@ -10,7 +10,7 @@ const ProductForm = () => {
   // const reserveStatus = useSelector((state) => state.reservations.reserveStatus);
   // const [successMsg, setSuccess] = useState(false);
 
-  const product = useSelector((state) => state.product);
+  // const product = useSelector((state) => state.product);
 
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
@@ -37,10 +37,10 @@ const ProductForm = () => {
     <form onSubmit={handleSubmit}>
       <h1>Add new product</h1>
       <div className="product-fields">
-        <input type="text" onChange={(e) => setName(e.target.value)} value={name} placeholder="user name" autoComplete='true'/>
-        <input type="text" onChange={(e) => setImage(e.target.value)} value={image} />
+        <input type="text" onChange={(e) => setName(e.target.value)} value={name} placeholder="Product name" autoComplete='true'/>
+        <input type="text" onChange={(e) => setImage(e.target.value)} value={image} placeholder="Image URL"/>
         <input type="number" onChange={(e) => setPrice(e.target.value)} value={price} placeholder="Price" autoComplete='true'/>
-        <textarea maxLength="300" minLength="30px" onChange= {(e) => setDescription(e.target.value)}
+        <textarea maxLength="300" minLength="10px" onChange= {(e) => setDescription(e.target.value)}
         value ={description}  autoComplete="true">
           Enter some description about the product
         </textarea>
