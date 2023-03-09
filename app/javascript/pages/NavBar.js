@@ -23,11 +23,11 @@ function NavBar() {
           </NavLink>
         </li>
 
-        {/* <li>
-          <NavLink className="item" to="/Details">
-            Details
+        {<li>
+          <NavLink className="item" to="/reservationForm" >
+            Reserve
           </NavLink>
-        </li> */}
+        </li>}
         <li>
           <NavLink className="item" to="/Reservations">
             Reservations

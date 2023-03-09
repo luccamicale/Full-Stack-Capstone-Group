@@ -1,33 +1,38 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchReservations } from "../redux/reservation/Reservation";
-import { Link } from "react-router-dom";
-import './Styles/reservation.css'
+import './reservation.css'
 
-function Reservations({ setProduct, setUser }) {
+function Reservations() {
   const { reservations, getReservationStatus } = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
-  console.log(reservations)
 
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
 
-  if (getReservationStatus === "pending") return <div className="reservation"> <span class="loader"></span></div>
+  if (getReservationStatus === "pending") return <div className="reservation"> <span class="reservation-loader"></span></div>
 
   return (
-    <div className="reservations">
-      <Link to="/reservationForm" onClick={() => setProduct(1)}>Reserve</Link>
+    <div className="reservation-container">
       <h1>My Reservations</h1>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Product name</th>
+          <th>City</th>
+          <th>Actions</th>
+        </tr>
       {reservations.map((reservation) =>
-        <div>
-          <h2>Date: {reservation.date}</h2>
-          <h3>Time: {reservation.time}</h3>
-          <h4>Product: {reservation.product.name}</h4>
-          <h3>User id: {reservation.user_id}</h3>
-        </div>
 
+        <tr>
+          <td>{reservation.date}</td>
+          <td>{reservation.product.name}</td>
+          <td>{reservation.city}</td>
+          <td><button type="button" className="btn cancel">Cancel</button></td>
+        </tr>
       )}
+      </table>
     </div>
   );
 }
