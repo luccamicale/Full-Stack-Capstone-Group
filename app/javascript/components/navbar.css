@@ -33,3 +33,9 @@ a {
     text-decoration: none;
     font-size: 2em;
 }
+
+
+@media only screen and (min-width: 769px) {
+
+    
+}
