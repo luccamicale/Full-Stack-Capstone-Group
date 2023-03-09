@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar setProduct={setProduct} />
 
       <Routes>
         <Route path="/" element={<Landing />} />
