@@ -10,11 +10,32 @@ export const fetchProduct = createAsyncThunk('FETCHPRODUCT', (id) => axios.get(`
     return product;
   }));
 
+
+  export const createProduct = createAsyncThunk(
+    'products/createproduct',
+    async (productData) => {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+        body: JSON.stringify(productData)
+      };
+      const response = await fetch(url, requestOptions)
+        .then((data) => data.json())
+          return response;
+  });
+
 const productSlice = createSlice({
   name: 'product',
-  initialState: [],
+  initialState: {
+    products: []
+  },
   extraReducers: (builder) => {
-    builder.addCase(fetchProduct.fulfilled, (_, action) => action.payload);
+    builder
+      .addCase(fetchProduct.fulfilled, (_, action) => action.payload)
+      .addCase(createProduct.fulfilled, (state, action) => {
+        state.products = action.payload;
+        return state
+      })
   },
 });
 
