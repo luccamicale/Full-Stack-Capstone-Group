@@ -1,7 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
-    render json: @reservations, status: 200
+    render json: @reservations, include: [:product], status: 200
   end
 
   def show
@@ -10,7 +10,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.user = @current_user
+    # @reservation.user = @current_user
 
     if @reservation.save
       render json: @reservation, status: 201
@@ -28,6 +28,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
     if @reservation.destroy
       render json: { message: 'reservation deleted' }, status: 200
     else
@@ -38,7 +39,7 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:date, :product_id)
+    params.require(:reservation).permit(:date, :product_id, :city, :user_id)
   end
 
   def find_reservation

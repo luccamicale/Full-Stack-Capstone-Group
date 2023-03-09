@@ -5,6 +5,7 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
     render json: @product, status: 200
   end
 
