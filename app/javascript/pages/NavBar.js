@@ -1,35 +1,38 @@
-import React from 'react';
-//import { Routes, Route } from 'react-router-dom';
-
-//import { useDispatch } from 'react-redux';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import '../components/navbar.css'
 
 function NavBar() {
- // const dispatch = useDispatch();
- // dispatch(retrieveRocket());
+
+  const [clicked, setClicked] = useState(false)
+
+  const handleClick = () => {
+    setClicked(!clicked)
+  }
 
   return (
-    <div className="navbar">
-      
-      <ul className="ul-nav">
+    <div className='nav' id="navbar">
+       <div className="menuButton" id="menuButton" onClick={handleClick}><p>Menu</p></div>
+       <div className={`menu ${clicked ? 'active' : ''}`}>
+        <ul className="ul-nav">
         <li className="link-item">
-          <NavLink className="item" to="/">
+          <NavLink className="item" to="/"onClick={handleClick}>
             INSERT LOGO HERE
           </NavLink>
         </li>
         <li className="link-item">
-          <NavLink className="item" to="/Home">
+          <NavLink className="item" to="/Home"onClick={handleClick}>
             Home
           </NavLink>
         </li>
  
         <li>  
-          <NavLink className="item" to="/Reservations">
+          <NavLink className="item" to="/Reservations"onClick={handleClick}>
             Reservations
           </NavLink>
         </li>
-     </ul>
-    
+        </ul>
+       </div>
     </div>
   );
 }
