@@ -5,23 +5,9 @@ import '../styles/home.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const homes = useSelector((state) => state.homes);
-  const dispatch = useDispatch();
-  console.log(homes);
-
-  const navigate = useNavigate();
-
-  const handleDetailsClick = () => {
-    const pathToDetail = '/Details';
-    navigate(pathToDetail);
-  };
-
-  useEffect(() => {
-    dispatch(fetchHomes());
-  }, [dispatch]);
 
   const settings = {
     dots: true,
