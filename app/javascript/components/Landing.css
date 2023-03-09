@@ -1,4 +1,4 @@
-.landing{
+.landing {
   width: 100vw;
   height: 100vh;
   background-image: url("https://i.ibb.co/HBmGSNX/landingmobile.png");
@@ -11,18 +11,19 @@
   z-index: -5555;
 }
 
-.logo img{
-    width: 50vw;
-    margin-top: 10vh;
+.logo img {
+  width: 50vw;
+  margin-top: 10vh;
 }
 
 @media only screen and (min-width: 769px) {
-  .landing{
+  .landing {
     background-image: url('https://i.ibb.co/G7vmV94/background.png');
     padding-left: 3vw;
   }
-  .logo img{
+
+  .logo img {
     width: 30vw;
     margin-top: 15vh;
-}
+  }
 }

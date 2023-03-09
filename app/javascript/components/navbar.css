@@ -1,96 +1,95 @@
 .menu {
-    display: none;
+  display: none;
 }
+
 .menu.active {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    z-index: 9999999;
-    background-image: url('https://images.pexels.com/photos/62693/pexels-photo-62693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 9999999;
+  background-image: url('https://images.pexels.com/photos/62693/pexels-photo-62693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 }
 
 .menuButton {
-    margin-left: 82%;
-    background: rgba( 255, 255, 255, 0.55 );
-        box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-        backdrop-filter: blur( 5.5px );
-        -webkit-backdrop-filter: blur( 5.5px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        width: 15%;
-        display: flex;
-        justify-content: center;
-
+  margin-left: 82%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 15%;
+  display: flex;
+  justify-content: center;
 }
 
 .menulogo {
-    width: 50%;
-    margin-top: 10%;
+  width: 50%;
+  margin-top: 10%;
 }
 
 ul {
-    list-style-type: none;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 a {
-    text-decoration: none;
-    font-size: 2em;
+  text-decoration: none;
+  font-size: 2em;
 }
-
 
 @media only screen and (min-width: 769px) {
-    .menuButton {
-   display: none;
-    }
-    .menu.active{
-        display: block;
-        background: rgba( 255, 255, 255, 0.55 );
-        box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-        backdrop-filter: blur( 5.5px );
-        -webkit-backdrop-filter: blur( 5.5px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        position: fixed;
-        left:88%;
-        top: 30%;
-        height: 40vh;
-        width: 10vw;
-    }
-    .menu {
-        display: block;
-        background: rgba( 255, 255, 255, 0.55 );
-        box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-        backdrop-filter: blur( 5.5px );
-        -webkit-backdrop-filter: blur( 5.5px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        position: fixed;
-        right: 2%;
-        top: 30%;
-        height: 40vh;
-        width: 10vw;
-    }
+  .menuButton {
+    display: none;
+  }
 
-    a {
-        text-decoration: none;
-        font-size: 1em;
-        color: black;
-    }
+  .menu.active {
+    display: block;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    left: 88%;
+    top: 30%;
+    height: 40vh;
+    width: 10vw;
+  }
 
-    a:hover {
-        background-color: #FFC600;
-    }
+  .menu {
+    display: block;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    right: 2%;
+    top: 30%;
+    height: 40vh;
+    width: 10vw;
+  }
 
-    a:active {
-        background-color: #FFC600;
-    }
+  a {
+    text-decoration: none;
+    font-size: 1em;
+    color: black;
+  }
+
+  a:hover {
+    background-color: #ffc600;
+  }
+
+  a:active {
+    background-color: #ffc600;
+  }
 }
-  
-  
