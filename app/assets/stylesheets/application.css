@@ -1,18 +1,33 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+ @import 'components/Detail.css';
+
+ :root {
+ --green: #97bf0f;
+ --yellow: #ffc600;
+ --blue: #10bbb5;
+ --black: #252525;
+ --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.App {
+  min-width: 375px;
+  max-width: 767.98px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .loader {
   width: 48px;

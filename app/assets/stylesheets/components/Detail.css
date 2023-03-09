@@ -1,0 +1,10 @@
+.product-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-image {
+  width: 400px;
+  height: 400px;
+}

@@ -3,23 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchHomes } from '../redux/home/Home';
 
-import {useNavigate } from 'react-router-dom';
-// import { NavLink } from 'react-router-dom';
-// import Detail from './components/Detail';
-
 function Home() {
   const home = useSelector((state) => state.homes);
   const dispatch = useDispatch();
   console.log(home)
-
-  const navigate = useNavigate();
-
-
-  const handleDetailsClick = () => {
-    const pathToDetail = '/Details';
-    navigate(pathToDetail);
-   // <Link to="/Details"></Link>
-  };
 
   useEffect(() => {
     dispatch(fetchHomes());
@@ -30,7 +17,6 @@ function Home() {
       {home.map((home) =>
 
 (  <Link to={`${home.id}`} key={home.id}>
-{/* <button type='button' onClick={handleDetailsClick} className="btn-to-details"> */}
         <div>
             <h2>{home.name}</h2>
 
@@ -40,8 +26,6 @@ function Home() {
 
             <img src={home.image}></img>
         </div>
-
-        {/* </button> */}
         </Link>)
       )}
 
