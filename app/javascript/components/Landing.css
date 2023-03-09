@@ -19,6 +19,7 @@
 @media only screen and (min-width: 769px) {
   .landing{
     background-image: url('https://i.ibb.co/G7vmV94/background.png');
+    padding-left: 3vw;
   }
   .logo img{
     width: 30vw;
