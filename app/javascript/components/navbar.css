@@ -49,6 +49,20 @@ a {
     .menuButton {
    display: none;
     }
+    .menu.active{
+        display: block;
+        background: rgba( 255, 255, 255, 0.55 );
+        box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+        backdrop-filter: blur( 5.5px );
+        -webkit-backdrop-filter: blur( 5.5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        position: fixed;
+        left:88%;
+        top: 30%;
+        height: 40vh;
+        width: 10vw;
+    }
     .menu {
         display: block;
         background: rgba( 255, 255, 255, 0.55 );
@@ -71,6 +85,10 @@ a {
     }
 
     a:hover {
+        background-color: #FFC600;
+    }
+
+    a:active {
         background-color: #FFC600;
     }
 }
