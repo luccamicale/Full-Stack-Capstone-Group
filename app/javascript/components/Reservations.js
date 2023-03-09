@@ -30,6 +30,13 @@ function Reservations() {
   return (
     <div className="reservation-container">
       {(successMsg) && <p style={{ color: 'green' }}>Reservation canceled successfully </p>}
+
+      {(cancelStatus === 'rejected') && <p style={{ color: 'red' }}>Something went wrong, please try again </p>}
+
+      {(reservations.length === 0 && getReservationStatus === 'fulfilled') && <p style={{ color: 'red' }}>You have no reservations </p>}
+
+      {(getReservationStatus === 'rejected') && <p style={{ color: 'red' }}>Something went wrong, please try again </p>
+      }
       <h1>My Reservations</h1>
       {(cancelStatus === 'pending') && <span class="cancel-loader"></span>}
       <table>
@@ -39,14 +46,14 @@ function Reservations() {
           <th>City</th>
           <th>Actions</th>
         </tr>
-      {reservations.map((reservation) =>
-        <tr>
-          <td>{reservation.date}</td>
-          <td>{reservation.product.name}</td>
-          <td>{reservation.city}</td>
-          <td><button type="button" className="btn cancel" onClick={() => dispatch(cancelReservation(reservation.id))}>Cancel</button></td>
-        </tr>
-      )}
+        {reservations.map((reservation) =>
+          <tr>
+            <td>{reservation.date}</td>
+            <td>{reservation.product.name}</td>
+            <td>{reservation.city}</td>
+            <td><button type="button" className="btn cancel" onClick={() => dispatch(cancelReservation(reservation.id))}>Cancel</button></td>
+          </tr>
+        )}
       </table>
     </div>
   );
