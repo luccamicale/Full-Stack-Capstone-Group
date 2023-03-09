@@ -24,7 +24,6 @@ const ReservationForm = ({ product, user, setProduct }) => {
   useEffect(() => {
     if (product !== null) {
       const filter = products.filter((prod) => prod.id === parseInt(product));
-      console.log(filter)
       if(filter.length > 0) {
         setBgImg(filter[0].image)
       } else {setBgImg('')}
@@ -53,7 +52,7 @@ const ReservationForm = ({ product, user, setProduct }) => {
         navigate("/reservations");
         dispatch(updateReservationStatus(""));
         setProduct(null);
-      }, 3000);
+      }, 1000);
     }
   }, [reserveStatus, navigate, dispatch]);
 
@@ -87,7 +86,7 @@ const ReservationForm = ({ product, user, setProduct }) => {
           <select value={location} onChange={(e) => setLocation(e.target.value)}>
             <option value={''}>Select city</option>
             {cities.map((city) => (
-              <option value={city.name}>{city.name}</option>
+              <option value={city}>{city}</option>
             ))}
           </select>
         </div>

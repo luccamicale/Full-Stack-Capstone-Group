@@ -1,7 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
-    render json: @reservations, include: [:product],  status: 200
+    render json: @reservations, include: [:product], status: 200
   end
 
   def show
@@ -28,6 +28,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
     if @reservation.destroy
       render json: { message: 'reservation deleted' }, status: 200
     else
