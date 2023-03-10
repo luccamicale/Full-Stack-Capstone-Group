@@ -23,15 +23,29 @@ export const fetchProduct = createAsyncThunk('FETCHPRODUCT', (id) => axios.get(`
           return response;
   });
 
+  export const cancelProduct = createAsyncThunk(
+    'products/cancelProduct',
+    async (productId) => {
+      const requestOptions = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+      };
+      const response = await fetch(`${url}/${productId}`, requestOptions)
+        .then((data) => data.json())
+      return response;
+    });
+
 const productSlice = createSlice({
   name: 'product',
   initialState: {
     products: [],
-    status: ''
+    status: '',
+    cancelStatus: ''
   },
   reducers: {
     updateStatus: (state, action) => {
       state.status = action.payload;
+      state.cancelStatus = action.payload;
       return state;
     },
    },
@@ -51,6 +65,20 @@ const productSlice = createSlice({
         state.status = 'failed';
          return state;
        })
+       .addCase(cancelProduct.pending, (state, action) => {
+        state.cancelStatus = "pending"
+        return state
+      })
+      .addCase(cancelProduct.rejected, (state, action) => {
+        state.cancelStatus = "rejected"
+        return state
+      })
+      .addCase(cancelProduct.fulfilled, (state, action) => {
+        if (action.payload.message == 'Product deleted') {
+          state.cancelStatus = "fulfilled"
+        }
+        return state
+      })
   },
 });
 
