@@ -48,6 +48,14 @@
   background-blend-mode: multiply;
 }
 
+.reservation-container {
+  background-color: #90bd00;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
 .reservationForm-container h1 {
   font-size: 2rem;
   font-weight: 500;
