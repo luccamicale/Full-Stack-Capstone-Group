@@ -6,16 +6,6 @@
   --white: #fff;
 }
 
-* {
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  overflow-y: scroll;
-  height: 100%;
-}
-
 .product-wrapper {
   min-width: 375px;
   max-width: 767.98px;
@@ -31,9 +21,8 @@ html {
 }
 
 .product-image {
-  width: 350px;
-  height: 250px;
-  border-radius: 50%;
+  width: 100%;
+  height: auto;
 }
 
 .body-description {
@@ -82,11 +71,12 @@ html {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    gap: 30px;
   }
 
   .product-image {
-    width: 500px;
-    height: 450px;
-    border-radius: 50%;
+    width: 450px;
+    height: 300px;
+    border-radius: 5px;
   }
 }
