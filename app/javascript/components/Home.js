@@ -29,7 +29,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="home-container">
       <h1 className="latest-model">Latest Models</h1>
       <hr></hr>
       <h4 className="tesla-model">Please select a Tesla Model</h4>
@@ -39,7 +39,7 @@ function Home() {
             <div className="container">
               <img className="image" src={home.image}></img>
               <h2>{home.name}</h2>
-              <h3>{home.description}</h3>
+              <h3 className="product-description">{home.description}</h3>
             </div>
           </Link>
         ))}
