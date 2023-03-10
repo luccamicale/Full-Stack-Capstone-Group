@@ -86,10 +86,6 @@ a {
   }
 
   .link-item:hover {
-    background-color: #ffc600;
-  }
-
-  .link-item:active {
-    background-color: #ffc600;
+    background-color: #1dbe28;
   }
 }

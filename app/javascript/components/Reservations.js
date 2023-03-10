@@ -9,6 +9,28 @@ function Reservations() {
   const { reservations, getReservationStatus, cancelStatus } = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   const [successMsg, setSuccess] = useState(false);
+  const [bgImg, setBgImg] = useState('');
+  let reserveImg = []
+
+  if (reservations.length > 0) {
+    reservations.forEach(res => {
+      reserveImg.push(res.product.image)
+    })
+  }
+
+  useEffect(() => {
+    if (reserveImg.length > 0) {
+      setInterval(() => {
+        let nextImg = reserveImg[Math.floor(Math.random() * reserveImg.length)]
+        if(nextImg === bgImg) {
+          nextImg = reserveImg[Math.floor(Math.random() * reserveImg.length)]
+        }
+        setBgImg(nextImg)
+      }, 5000)
+    } else { setBgImg('') }
+  }, [reserveImg]);
+
+  console.log(reserveImg)
 
   useEffect(() => {
     if (cancelStatus === "fulfilled") {
@@ -28,7 +50,7 @@ function Reservations() {
   if (getReservationStatus === "pending") return <div className="reservation"> <span class="reservation-loader"></span></div>
 
   return (
-    <div className="reservation-container">
+    <div className="reservation-container" style={{ backgroundImage: `url(${bgImg})` }}>
       {(successMsg) && <p style={{ color: 'green' }}>Reservation canceled successfully </p>}
 
       {(cancelStatus === 'rejected') && <p style={{ color: 'red' }}>Something went wrong, please try again </p>}
