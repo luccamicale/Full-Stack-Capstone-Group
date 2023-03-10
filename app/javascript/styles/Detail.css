@@ -1,6 +1,6 @@
 :root {
   --green: #97bf0f;
-  --yellow: #ffc600;
+  --yellow: #96bf0d;
   --blue: #10bbb5;
   --black: #252525;
   --white: #fff;
@@ -69,6 +69,12 @@ html {
   border: none;
   margin-top: 100px;
   font-size: 16px;
+  transition: 0.5s ease-in-out;
+}
+
+.btn-reserve-from-detail:hover {
+  background-color: #1dbe28;
+  border: solid 1px #1dbe28;
 }
 
 @media only screen and (min-width: 768px) {

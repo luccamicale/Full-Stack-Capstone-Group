@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import '../styles/Detail.css';
 
-function Detail() {
+function Detail({setProduct}) {
   const navigate = useNavigate();
 
   const product = useSelector((state) => state.product);
@@ -38,7 +38,7 @@ function Detail() {
               </p>
             </div>
 
-          <button type='button' className='btn-reserve-from-detail'> Reserve</button>
+        <button type='button' className='btn-reserve-from-detail' onClick={() => { setProduct(product.id); navigate('/reservationForm') }}> Reserve</button>
 
          </div>
         </div>
