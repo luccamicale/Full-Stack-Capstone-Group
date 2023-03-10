@@ -45,6 +45,13 @@ function NavBar({ setProduct }) {
             Reservations
           </NavLink>
         </li>
+
+        <li>
+          <NavLink className="item" to="/new-product">
+            Add product
+          </NavLink>
+        </li>
+
      </ul>
 
         </div>

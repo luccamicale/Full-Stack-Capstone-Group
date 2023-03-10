@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'users', to: 'users#index'
       get 'products', to: 'products#index'
       get 'products/:id', to: 'products#show'
+      post 'products', to: 'products#create'
     end
   end
 end
