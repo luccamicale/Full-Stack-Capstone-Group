@@ -1,0 +1,42 @@
+:root {
+  --green: #97bf0f;
+  --yellow: #96bf0d;
+  --blue: #10bbb5;
+  --black: #252525;
+  --white: #fff;
+}
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+} */
+
+/* .form {
+  all: unset;
+} */
+
+.form-add-product-container {
+  min-width: 375px;
+  max-width: 767.98px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  border-radius: 2px;
+  padding: 30px 5px 5px 5px;
+  margin: 30px auto;
+  background-color: var(--yellow);
+}
+
+.product-fields {
+  display: flex;
+  flex-direction: column;
+}

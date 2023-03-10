@@ -12,10 +12,10 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   overflow-y: scroll;
   height: 100%;
-}
+} */
 
 .product-wrapper {
   min-width: 375px;

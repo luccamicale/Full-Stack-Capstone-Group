@@ -30,7 +30,6 @@ function App() {
         <Route path="/Home/:id" element={<Detail setProduct={setProduct} />} />
         <Route path="/Reservations" element={<Reservations setProduct={setProduct} setUser={setUser} />} />
 
-        <Route path="/reservationForm" element={<ReservationForm product={product} user={user} />} />
         <Route path="/new-product" element={<ProductForm  /> } />
         <Route path="/reservationForm" element={<ReservationForm product={product} user={user} setProduct={setProduct} />} />
       </Routes>

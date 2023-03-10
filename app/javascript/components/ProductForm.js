@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createProduct } from '../redux/detail/Detail';
 import { useNavigate } from 'react-router-dom';
 
+import '../styles/Add-product.css';
+
 
 const ProductForm = () => {
   const navigate = useNavigate();
@@ -34,20 +36,35 @@ const ProductForm = () => {
   // }, [dispatch]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Add new product</h1>
-      <div className="product-fields">
-        <input type="text" onChange={(e) => setName(e.target.value)} value={name} placeholder="Product name" autoComplete='true'/>
-        <input type="text" onChange={(e) => setImage(e.target.value)} value={image} placeholder="Image URL"/>
-        <input type="number" onChange={(e) => setPrice(e.target.value)} value={price} placeholder="Price" autoComplete='true'/>
-        <textarea maxLength="300" minLength="10px" onChange= {(e) => setDescription(e.target.value)}
-        value ={description}  autoComplete="true">
-          Enter some description about the product
-        </textarea>
-      </div>
+    <form onSubmit={handleSubmit} className="form-add-product-container">
+      {/* <div className="form-add-product-container"> */}
+        <h1>Add new product</h1>
+        <div className="product-fields">
+          <div className='input-field'>
+            <input type="text" onChange={(e) => setName(e.target.value)} value={name}
+            placeholder="Product name" autoComplete='true' />
+          </div>
 
+          <div className='input-field'>
+            <input type="text" onChange={(e) => setImage(e.target.value)} value={image} placeholder="Image URL" />
+          </div>
 
-      <input type="submit" value = "Add product" />
+          <div className='input-field'>
+            <input type="number" onChange={(e) => setPrice(e.target.value)} value={price}
+            placeholder="Price" autoComplete='true'/>
+          </div>
+
+          <div className='input-field'>
+            <textarea maxLength="300" minLength="10px" onChange= {(e) => setDescription(e.target.value)}
+              value ={description}  autoComplete="true">
+              Enter some description about the product
+            </textarea>
+          </div>
+
+        </div>
+
+        <input type="submit" value = "Add product" />
+      {/* </div> */}
     </form>
   )
 }
