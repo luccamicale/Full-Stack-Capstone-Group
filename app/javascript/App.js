@@ -7,7 +7,7 @@ import Landing from './components/Landing';
 import Detail from './components/Detail';
 import Reservations from './components/Reservations';
 import ReservationForm from './components/ReservationForm';
-
+import Login from './components/Login';
 import ProductForm from './components/ProductForm';
 import { fetchHomes } from './redux/home/Home';
 
@@ -33,6 +33,8 @@ function App() {
         <Route path="/reservationForm" element={<ReservationForm product={product} user={user} />} />
         <Route path="/new-product" element={<ProductForm  /> } />
         <Route path="/reservationForm" element={<ReservationForm product={product} user={user} setProduct={setProduct} />} />
+      
+        <Route path="/login" element={<Login />} />
       </Routes>
 
     </div>
