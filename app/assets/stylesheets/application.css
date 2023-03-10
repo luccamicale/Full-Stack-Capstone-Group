@@ -1,20 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-.loader {
+.details-loader {
   width: 48px;
   height: 48px;
   display: inline-block;
@@ -27,8 +11,8 @@
   animation: 1s rotate linear infinite;
 }
 
-.loader::before,
-.loader::after {
+.details-loader::before,
+.details-loader::after {
   content: '';
   top: 0;
   left: 0;
@@ -38,7 +22,7 @@
   transform: translate(-10px, 19px) rotate(-35deg);
 }
 
-.loader::after {
+.details-loader::after {
   border-color: #de3500 #0000 #0000 #0000;
   transform: translate(32px, 3px) rotate(-35deg);
 }
@@ -49,7 +33,7 @@
   }
 }
 
-.reservation {
+.reservation-load {
   display: flex;
   flex-direction: column;
   align-items: center;

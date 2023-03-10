@@ -2,8 +2,13 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProduct } from '../redux/detail/Detail';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function Detail() {
+import '../styles/Detail.css';
+
+function Detail({setProduct}) {
+  const navigate = useNavigate();
+
   const product = useSelector((state) => state.product);
   console.log(`product in details page= ${product}`);
   const dispatch = useDispatch();
@@ -19,17 +24,27 @@ function Detail() {
 
   return (
 
-        <div>
-          <h1>Welcome to the product details</h1>
-          <h2>{product.name}</h2>
-          <h3>{product.id}</h3>
-          <h3>{product.description}</h3>
-          <h4>{product.price}</h4>
-          <img src={product.image}></img>
-          <button type='button'> Reserve</button>
+        <div className='product-wrapper'>
+          <img src={product.image} className="product-image"></img>
+         <div className='body-description'>
+          <h3 className='product-name'>{product.name}</h3>
+
+            <div className='data-row'>
+              <p className='text-label'>
+                Product price
+              </p>
+              <p>
+                {product.price}
+              </p>
+            </div>
+
+        <button type='button' className='btn-reserve-from-detail' onClick={() => { setProduct(product.id); navigate('/reservationForm') }}> Reserve</button>
+
+         </div>
         </div>
 
-  );
-  }
 
-  export default Detail;
+  );
+}
+
+export default Detail;

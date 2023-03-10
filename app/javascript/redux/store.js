@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import myReducer from './home/Home';
-import homesSlice from './home/Home';
+import homesReducer from './home/Home';
+// import homesSlice from './home/Home';
 import productReducer from './detail/Detail';
-import reservationSlice from './reservation/Reservation';
+import reservationReducer from './reservation/Reservation';
 
 const store = configureStore({
   reducer: {
-    homes: homesSlice,
+    homes: homesReducer,
     product: productReducer,
-     reservations: reservationSlice
+     reservations: reservationReducer
   },
 });
 

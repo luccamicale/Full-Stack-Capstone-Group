@@ -1,30 +1,47 @@
-import React from 'react';
-//import { Routes, Route } from 'react-router-dom';
-
-//import { useDispatch } from 'react-redux';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import '../components/navbar.css'
+import logo from '../components/img/logo.gif';
 
-function NavBar() {
- // const dispatch = useDispatch();
- // dispatch(retrieveRocket());
+
+function NavBar({ setProduct }) {
+
+  const [clicked, setClicked] = useState(false)
+
+  const handleClick = () => {
+    setClicked(!clicked)
+  }
+
+  const set = () => {
+    handleClick()
+    setProduct(null)
+  }
 
   return (
-    <div className="navbar">
+    <div className='nav' id="navbar">
+       <div className="menuButton" id="menuButton" onClick={handleClick}><p>Menu</p></div>
+       <div className={`menu ${clicked ? 'active' : ''}`}>
+        <ul className="ul-nav">
 
-      <ul className="ul-nav">
         <li className="link-item">
-          <NavLink className="item" to="/">
-            INSERT LOGO HERE
+            <NavLink className="item" to="/" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
+          <img src={logo} alt="TESLA" className='menulogo'/>
           </NavLink>
         </li>
         <li className="link-item">
-          <NavLink className="item" to="/Home">
+            <NavLink className="item" to="/Home" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
             Home
           </NavLink>
         </li>
 
         <li>
-          <NavLink className="item" to="/Reservations">
+            <NavLink className="link-item" to="/reservationForm" onClick={set} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
+            Reserve
+          </NavLink>
+        </li>
+
+        <li>
+            <NavLink className="link-item" to="/Reservations" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
             Reservations
           </NavLink>
         </li>
@@ -37,6 +54,7 @@ function NavBar() {
 
      </ul>
 
+        </div>
     </div>
   );
 }
