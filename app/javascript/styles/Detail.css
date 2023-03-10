@@ -17,7 +17,6 @@ html {
   height: 100%;
 }
 
-
 .product-wrapper {
   min-width: 375px;
   max-width: 767.98px;
@@ -25,10 +24,9 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
-  padding-top: 30px;
   height: 100vh;
   border-radius: 2px;
-  padding: 5px;
+  padding: 30px 5px 5px 5px;
   margin: 30px auto;
 }
 
@@ -76,6 +74,7 @@ html {
   .product-wrapper {
     display: flex;
     flex-direction: column;
+
     /* justify-content: center;
     align-items: center; */
   }
