@@ -47,7 +47,7 @@ function NavBar({ setProduct }) {
         </li>
 
         <li>
-          <NavLink className="item" to="/new-product">
+          <NavLink className="link-item" to="/new-product" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
             Add product
           </NavLink>
         </li>

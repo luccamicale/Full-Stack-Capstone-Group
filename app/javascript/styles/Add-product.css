@@ -24,19 +24,75 @@ html {
 .form-add-product-container {
   min-width: 375px;
   max-width: 767.98px;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
   border-radius: 2px;
-  padding: 30px 5px 5px 5px;
+  padding: 30px 5px 30px 5px;
   margin: 30px auto;
   background-color: var(--yellow);
+}
+
+.add-new-product-title {
+  color: var(--white);
 }
 
 .product-fields {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.product-fields input,
+.product-fields textarea {
+  width: 100%;
+  height: 40px;
+  padding: 7px;
+}
+
+.product-fields textarea {
+  height: auto;
+}
+
+.btn-add-product {
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  height: auto;
+  color: var(--white);
+  background-color: var(--blue);
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-add-product-container {
+    min-width: 100%;
+  }
+
+  .product-fields {
+    gap: 20px;
+  }
+
+  .product-fields input,
+  .product-fields textarea {
+    width: 100%;
+    height: 45px;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .product-fields textarea {
+    height: auto;
+  }
+
+  .btn-add-product {
+    padding: 18px 36px;
+    height: auto;
+    color: var(--white);
+    background-color: var(--blue);
+    font-size: 20px;
+  }
 }

@@ -13,10 +13,12 @@ const ProductForm = () => {
   // const [successMsg, setSuccess] = useState(false);
 
   // const product = useSelector((state) => state.product);
+  const placeholderTextarea = 'Enter some description about the product';
+  const placeholderPrice = 'Price';
 
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
-  const [price, setPrice] = useState(0.0);
+  const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
 
   const handleSubmit = (e) => {
@@ -38,7 +40,7 @@ const ProductForm = () => {
   return (
     <form onSubmit={handleSubmit} className="form-add-product-container">
       {/* <div className="form-add-product-container"> */}
-        <h1>Add new product</h1>
+        <h1 className='add-new-product-title'>Add new product</h1>
         <div className="product-fields">
           <div className='input-field'>
             <input type="text" onChange={(e) => setName(e.target.value)} value={name}
@@ -51,19 +53,18 @@ const ProductForm = () => {
 
           <div className='input-field'>
             <input type="number" onChange={(e) => setPrice(e.target.value)} value={price}
-            placeholder="Price" autoComplete='true'/>
+            placeholder={placeholderPrice} autoComplete='true'/>
           </div>
 
           <div className='input-field'>
-            <textarea maxLength="300" minLength="10px" onChange= {(e) => setDescription(e.target.value)}
-              value ={description}  autoComplete="true">
-              Enter some description about the product
-            </textarea>
+            <textarea maxLength="1000" minLength="10px" onChange= {(e) => setDescription(e.target.value)}
+              value ={description}  autoComplete="true" placeholder={placeholderTextarea} />
+
           </div>
 
         </div>
 
-        <input type="submit" value = "Add product" />
+        <input type="submit" value = "Add product" className='btn-add-product' />
       {/* </div> */}
     </form>
   )
