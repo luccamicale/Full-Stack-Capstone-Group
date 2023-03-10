@@ -21,8 +21,9 @@ html {
   min-width: 375px;
   max-width: 767.98px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   height: 100vh;
   border-radius: 2px;
@@ -73,10 +74,9 @@ html {
 @media only screen and (min-width: 768px) {
   .product-wrapper {
     display: flex;
-    flex-direction: column;
-
-    /* justify-content: center;
-    align-items: center; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .product-image {
