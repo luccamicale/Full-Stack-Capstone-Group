@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchProduct } from '../redux/detail/Detail';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import logo from './img/logo.png';
 
 import '../styles/Detail.css';
 
@@ -25,6 +26,7 @@ function Detail({setProduct}) {
   return (
 
         <div className='product-wrapper'>
+
           <img src={product.image} className="product-image"></img>
          <div className='body-description'>
           <h3 className='product-name'>{product.name}</h3>
@@ -37,6 +39,10 @@ function Detail({setProduct}) {
                 {product.price}
               </p>
             </div>
+
+            <p>
+              {product.description}
+            </p>
 
         <button type='button' className='btn-reserve-from-detail' onClick={() => { setProduct(product.id); navigate('/reservationForm') }}> Reserve</button>
 
