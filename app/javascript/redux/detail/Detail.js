@@ -27,15 +27,25 @@ export const fetchProduct = createAsyncThunk('FETCHPRODUCT', (id) => axios.get(`
 const productSlice = createSlice({
   name: 'product',
   initialState: {
-    products: []
+    products: [],
+    status: ''
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProduct.fulfilled, (_, action) => action.payload)
       .addCase(createProduct.fulfilled, (state, action) => {
         state.products = action.payload;
-        return state
+        state.status = 'success';
+        return state;
       })
+      .addCase(createProduct.pending, (state, action) => {
+        state.status = 'loading';
+        return state;
+      })
+      .addCase(createProduct.rejected, (state, action) => {
+        state.status = 'failed';
+         return state;
+       })
   },
 });
 

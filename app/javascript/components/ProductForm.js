@@ -8,11 +8,13 @@ import '../styles/Add-product.css';
 
 const ProductForm = () => {
   const navigate = useNavigate();
+  const pathToProducts = '/Home';
   const dispatch = useDispatch();
   // const reserveStatus = useSelector((state) => state.reservations.reserveStatus);
   // const [successMsg, setSuccess] = useState(false);
 
-  // const product = useSelector((state) => state.product);
+  const createProductStatus = useSelector((state) => state.product.status);
+  console.log(`message stattus==${createProductStatus}`)
   const placeholderTextarea = 'Enter some description about the product';
   const placeholderPrice = 'Price';
 
@@ -20,6 +22,9 @@ const ProductForm = () => {
   const [image, setImage] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
+
+  // const [messageCreateProduct, setMessageCreateProduct] = useState(false);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +35,7 @@ const ProductForm = () => {
       description
     }
     dispatch(createProduct(productData));
+    navigate(pathToProducts);
   }
 
   // useEffect(() => {
@@ -65,6 +71,10 @@ const ProductForm = () => {
         </div>
 
         <input type="submit" value = "Add product" className='btn-add-product' />
+
+        {(createProductStatus === "success") &&
+          <p className='create-product-status-text'>Product created successfully!</p>
+    }
       {/* </div> */}
     </form>
   )
