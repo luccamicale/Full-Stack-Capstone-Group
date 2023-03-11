@@ -10,6 +10,7 @@ import ReservationForm from './components/ReservationForm';
 
 import ProductForm from './components/ProductForm';
 import { fetchHomes } from './redux/home/Home';
+import Products from './components/Products';
 
 function App() {
   const [user, setUser] = useState(1);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Home/:id" element={<Detail setProduct={setProduct} />} />
+        <Route path='/Products' element= {<Products />} />
         <Route path="/Reservations" element={<Reservations setProduct={setProduct} setUser={setUser} />} />
 
         <Route path="/new-product" element={<ProductForm  /> } />

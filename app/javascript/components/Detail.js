@@ -36,6 +36,9 @@ function Detail({setProduct}) {
               <p>
                 {product.price}
               </p>
+              <p>
+                {product.description}
+              </p>
             </div>
 
         <button type='button' className='btn-reserve-from-detail' onClick={() => { setProduct(product.id); navigate('/reservationForm') }}> Reserve</button>
