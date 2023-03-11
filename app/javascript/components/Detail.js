@@ -38,9 +38,6 @@ function Detail({setProduct}) {
               <p>
                 {product.price}
               </p>
-              <p>
-                {product.description}
-              </p>
             </div>
 
             <p>

@@ -47,7 +47,7 @@ const ProductForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="form-add-product-container">
-      <h1 className="add-new-product-title">Add new product</h1>
+      <h2 className="add-new-product-title">Add new product</h2>
       <div className="product-fields">
         <div className="input-field">
           <input
