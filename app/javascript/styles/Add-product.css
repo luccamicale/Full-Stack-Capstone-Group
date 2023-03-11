@@ -52,6 +52,7 @@
   font-size: 18px;
   transition: 1s ease-in-out;
 }
+
 .btn-add-product:hover {
   background-color: green;
 }
