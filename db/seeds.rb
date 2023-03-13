@@ -1,4 +1,4 @@
-user = User.create!(name: "Amare", age: 37)
+user = User.create!(username: "Amare", password: 'hello')
 
 product = Product.create!(name: "Model S",
 image: "https://imageio.forbes.com/specials-images/imageserve/60c3a36876435a1bf9b4012e/Tesla-Model-S-Plaid/960x0.jpg?format=jpg&width=960",

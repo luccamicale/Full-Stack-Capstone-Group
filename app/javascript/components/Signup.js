@@ -1,16 +1,19 @@
 import React from "react";
 import logo from './img/logo.png';
 //import './Login.css'
-import fetchUsers from '../redux/registration/Registration';
-import { useSelector } from "react-redux";
+//import fetchUsers from '../redux/registration/Registration';
+import { useSelector , useDispatch } from "react-redux";
 
 function Signup() {
-
+  const dispatch = useDispatch();
   const [username, setUsername] = useSate('username');
   const [password, setPassword] = useSate('Password');
   const users = useSelector((state) => state.users);
-
-
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    const userData = {username,password};
+    dispatch(createProduct(userData));
+  }
   return (
       <div className="signup">
         <div className="landinglogo"><img src={logo} alt="TESLA"/></div>
