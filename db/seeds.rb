@@ -16,3 +16,5 @@ product4 = Product.create!(name: "Model Y",
 image: "https://images.prismic.io/drive-electric/5119970b-fb90-48dc-b479-18e9f9ec1dcf_0x0-ModelY_01.jpg?auto=compress,format&rect=881,1253,2462,1293&w=1200&h=630&fit=crop",
 price: 72000, description: "Tesla All-Wheel Drive has two ultra-responsive, independent electric motors that digitally control torque to the front and rear wheels—for far better handling, traction and stability control. Model Y is capable in rain, snow, mud and off-road.")
 
+
+reservation =Reservation.create(id: 1, date: '20-05-2023', city: 'New York', user_id: 1)
