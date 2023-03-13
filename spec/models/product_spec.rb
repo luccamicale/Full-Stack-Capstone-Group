@@ -23,4 +23,8 @@ RSpec.describe Product, type: :model do
   it 'can have an image attached' do
     expect(subject).to respond_to(:image)
   end
+
+  it 'can have an price attached' do
+    expect(subject).to respond_to(:price)
+  end
 end
