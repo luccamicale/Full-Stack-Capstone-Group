@@ -3,11 +3,11 @@ import logo from './img/logo.png';
 //import './Login.css'
 //import fetchUsers from '../redux/registration/Registration';
 import { useSelector , useDispatch } from "react-redux";
-
+import { useState } from "react";
 function Signup() {
   const dispatch = useDispatch();
-  const [username, setUsername] = useSate('username');
-  const [password, setPassword] = useSate('Password');
+  const [username, setUsername] = useState('username');
+  const [password, setPassword] = useState('Password');
   const users = useSelector((state) => state.users);
   const handleSubmit = (e) =>{
     e.preventDefault();
