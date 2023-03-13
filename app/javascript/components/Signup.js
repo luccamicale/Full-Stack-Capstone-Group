@@ -9,7 +9,7 @@ function Signup() {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('username');
   const [password, setPassword] = useState('Password');
-  const users = useSelector((state) => state.users);
+ 
   const handleSubmit = (e) =>{
     e.preventDefault();
     const userData = {username,password};

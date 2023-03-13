@@ -1,39 +1,31 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-
+import { fetchUsers } from '../redux/registration/Registration';
 
 function Login() {
 
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-
-  const handleSubmit = (e) => {
+  const [username, setUsername] = useState('Username');
+  const [password, setPassword] = useState('Password');
+  const users = useSelector((state) => state.users.users);
+  const usernameArray = users.username.split()
+  if(users.username.includes(username)) {
     e.preventDefault();
-    axios.post('http://127.0.0.1:3000/api/v1/users', { user: { name, age } })
-      .then(response => {
-        console.log(response.data);
-        // Handle success
-      })
-      .catch(error => {
-        console.log(error.response.data);
-        // Handle error
-      });
-  }
+    handleSubmit
+    }
+ 
+ 
+  
 
     return (
       <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
-      <label>
-        Age:
-        <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
-      </label>
-      <button type="submit">Create User</button>
+              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+      
+        <input type="number" value={password} onChange={(e) => setPassword(e.target.value)} />
+      
+      <button type="submit">Log in</button>
     </form>
     );
-  }
+}
 
   export default Login;
