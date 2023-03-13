@@ -9,14 +9,19 @@ default: &default
 development:
   <<: *default
   database: Full_Stack_Capstone_Group_development
+  username: "postgres"
+  password: "FullStackDev@2023"
 
 
 test:
   <<: *default
   database: Full_Stack_Capstone_Group_test
+  username: "postgres"
+  password: "FullStackDev@2023"
 
 
 
 production:
   <<: *default
-  database: Full_Stack_Capstone_Group_production
+  database: carbooking
+  url: <%= ENV['DATABASE_URL'] %>

@@ -29,6 +29,7 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
     if @product.destroy
       render json: { message: 'product deleted' }, status: 200
     else
