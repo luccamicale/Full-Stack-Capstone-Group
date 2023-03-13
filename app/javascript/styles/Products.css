@@ -1,0 +1,55 @@
+
+:root {
+  --green: #97bf0f;
+  --yellow: #96bf0d;
+  --blue: #10bbb5;
+  --black: #252525;
+  --white: #fff;
+}
+
+.products-container {
+  height: 100vh;
+  border-radius: 2px;
+  padding: 30px 5px 5px 5px;
+  margin: 30px auto;
+  background-color: var(--yellow);
+}
+
+.products-delete-title {
+  text-align: center;
+  color: var(--white);
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+  color: var(--white);
+}
+
+.btn-delete-product {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 5px 15px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: 1s ease-in-out;
+}
+
+.btn-delete-product:hover {
+  background-color: var(--black);
+  border: solid 1px var(--green);
+  color: red;
+}
