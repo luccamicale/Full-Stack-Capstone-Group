@@ -4,6 +4,7 @@ import logo from './img/logo.png';
 //import fetchUsers from '../redux/registration/Registration';
 import { useSelector , useDispatch } from "react-redux";
 import { useState } from "react";
+import { createUser } from "../redux/registration/Registration";
 function Signup() {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('username');
@@ -12,7 +13,7 @@ function Signup() {
   const handleSubmit = (e) =>{
     e.preventDefault();
     const userData = {username,password};
-    dispatch(createProduct(userData));
+    dispatch(createUser(userData));
   }
   return (
       <div className="signup">
