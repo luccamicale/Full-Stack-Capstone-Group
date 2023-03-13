@@ -22,4 +22,8 @@ RSpec.describe 'Users', type: :model do
   it 'can have an age attached' do
     expect(subject).to respond_to(:age)
   end
+
+  it 'can have an name attached' do
+    expect(subject).to respond_to(:name)
+  end
 end
