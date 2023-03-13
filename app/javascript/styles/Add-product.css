@@ -64,6 +64,19 @@
   background-color: green;
 }
 
+.sub-title-newcar {
+  font-size: 16px;
+  width: 80%;
+  text-align: center;
+  color: #fff;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 @media only screen and (min-width: 768px) {
   .form-add-product-container {
     min-width: 100%;

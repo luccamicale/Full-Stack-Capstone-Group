@@ -48,6 +48,9 @@ const ProductForm = () => {
   return (
     <form onSubmit={handleSubmit} className="form-add-product-container">
       <h2 className="add-new-product-title">New Car</h2>
+      <h3 className='sub-title-newcar'>
+        If you wish, you can add the latest Tesla model here, with its respective description, price and image.
+      </h3>
       <div className="product-fields">
         <div className="input-field">
           <input
