@@ -64,7 +64,7 @@
   text-align: center;
 }
 
-form {
+.form-reservation {
   color: #fff;
   display: flex;
   gap: 20px;
@@ -81,7 +81,7 @@ form {
   font-size: 20px;
 }
 
-form input,
+.form-reservation input,
 select {
   border-radius: 5px;
   border: none;
@@ -90,7 +90,7 @@ select {
   color: #fff;
 }
 
-form div {
+.form-reservation div {
   display: flex;
   width: fit-content;
   justify-content: center;
@@ -102,7 +102,7 @@ form div {
   height: 25px;
 }
 
-form button {
+.form-reservation button {
   background-color: #fff;
   color: #90bd00;
   padding: 3px 10px;
@@ -117,7 +117,7 @@ form button {
 }
 
 @media screen and (max-width: 768px) {
-  form {
+  .form-reservation {
     flex-wrap: wrap;
   }
 

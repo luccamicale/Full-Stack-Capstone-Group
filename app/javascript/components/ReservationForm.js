@@ -59,11 +59,11 @@ const ReservationForm = ({ product, user, setProduct }) => {
 
       <p>{successMsg && "Product Reserved Successfully"}</p>
       {(reserveStatus === "rejected") && <p style={{ color: 'red' }}>Something went wrong, please try again </p>}
-      
+
       <h1>RESERVE A CAR</h1>
       <p>There are many models of the tesla car please select a car model, reservation date, and city to book a test right of any of the model if it is available in your city</p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-reservation">
 
          <div className="select-container">
           <select value={product} onChange={(e) => { setProduct(e.target.value)}} >
