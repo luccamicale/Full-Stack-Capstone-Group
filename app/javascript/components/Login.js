@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
-import { fetchUsers } from '../redux/registration/Registration';
+//import axios from 'axios';
+//import { fetchUsers } from '../redux/registration/Registration';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -15,16 +15,16 @@ function Login() {
   //const usernameArray = users.username.split()
   if(users.username === username) {
   
+    handleSubmit();
+
+
+    }
+ 
     const handleSubmit = (e) =>{
       e.preventDefault();
       const userData = {username,password};
     navigate(path);
     }
-
-
-    }
- 
- 
   
 
     return (
