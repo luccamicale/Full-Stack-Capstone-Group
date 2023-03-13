@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :model do
   subject do
-    user = User.create!(username: "Amare", password: 'hello')
+    User.create!(username: 'Amare', password: 'hello')
   end
 
   it 'is not valid without a username' do

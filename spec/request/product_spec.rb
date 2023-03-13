@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   describe 'GET #index' do
     before do
-        user = User.create!(username: "Amare", password: 'hello')
+      User.create!(username: 'Amare', password: 'hello')
       get :index
     end
 

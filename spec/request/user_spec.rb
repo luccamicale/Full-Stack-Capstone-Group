@@ -6,5 +6,5 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       get :index
       expect(response).to be_successful
     end
-  end 
+  end
 end
