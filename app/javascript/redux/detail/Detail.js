@@ -74,8 +74,8 @@ const productSlice = createSlice({
         return state
       })
       .addCase(cancelProduct.fulfilled, (state, action) => {
-        if (action.payload.message == 'Product deleted') {
-          state.cancelStatus = "fulfilled"
+        if (action.payload.message == "product deleted") {
+          state.cancelStatus = "fulfilled";
         }
         return state
       })
