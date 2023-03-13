@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :model do
   subject do
-    User.create(id: 1, name: 'Amare', age: '37')
+    user2 = User.create!(id: 2, name: "Lucca", age: 22)
   end
 
   it 'is not valid without a name' do
