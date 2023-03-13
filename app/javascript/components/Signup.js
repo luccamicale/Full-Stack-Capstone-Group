@@ -22,8 +22,8 @@ function Signup() {
             <h1>Log in</h1>
             <div className="signupform">
                 <form className="signupformtag" onSubmit={handleSubmit}>
-                <div><input type="text" value="User name" onChange={(e) => setUsername(e.target.value) }/></div>
-                <div><input type="text" value="Password"  onChange={(e) => setPassword(e.target.value) }/></div>
+                <div><input type="text" value={username} onChange={(e) => setUsername(e.target.value) }/></div>
+                <div><input type="text" value={password}  onChange={(e) => setPassword(e.target.value) }/></div>
                 <button type="submit">Signup</button>
                 </form>
             </div>
