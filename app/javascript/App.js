@@ -10,6 +10,7 @@ import ReservationForm from './components/ReservationForm';
 import Login from './components/Login';
 import ProductForm from './components/ProductForm';
 import { fetchHomes } from './redux/home/Home';
+import Signup from './components/Signup';
 
 function App() {
   const [user, setUser] = useState(1);
@@ -35,6 +36,8 @@ function App() {
         <Route path="/reservationForm" element={<ReservationForm product={product} user={user} setProduct={setProduct} />} />
       
         <Route path="/login" element={<Login />} />
+
+        <Route path='/signup' element={<Signup />} />
       </Routes>
 
     </div>
