@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post 'reservations', to: 'reservations#create'
       delete 'reservations/:id', to: 'reservations#destroy'
       post 'signup', to: 'users#create'
+      post 'login', to: 'users'
       get 'users', to: 'users#index'
       get 'products', to: 'products#index'
       get 'products/:id', to: 'products#show'
