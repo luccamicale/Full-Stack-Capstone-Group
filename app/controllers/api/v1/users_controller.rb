@@ -10,7 +10,7 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.user = @current_user
+ #   @user.user = @current_user
 
     if @user.save
       render json: @user, status: 201
