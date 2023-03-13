@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   describe 'GET #index' do
     before do
-        user2 = User.create!(id: 2, name: "Lucca", age: 22)
+        user2 = User.create!(id: 1, name: "Lucca", age: 22)
       get :index
     end
 
@@ -13,7 +13,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
     it 'returns all users' do
       users = JSON.parse(response.body)
-      expect(users.size).to eq(2)
+      expect(users.size).to eq(1)
     end
   end
 end
