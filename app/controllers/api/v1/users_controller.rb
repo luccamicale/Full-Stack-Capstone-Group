@@ -37,11 +37,11 @@ class Api::V1::UsersController < ApplicationController
 
   private
 
-  def reservation_params
-    params.require(:user).permit(:date, :product_id)
+  def user_params
+    params.require(:user).permit(:name, :age)
   end
 
-  def find_reservation
+  def find_user
     @user = User.find(params[:id])
   end
 end

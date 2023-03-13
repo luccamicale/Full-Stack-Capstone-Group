@@ -1,25 +1,38 @@
-import React from "react";
-import logo from './img/logo.png';
-import './Login.css'
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
+
 
 function Login() {
 
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://127.0.0.1:3000/api/v1/users', { user: { name, age } })
+      .then(response => {
+        console.log(response.data);
+        // Handle success
+      })
+      .catch(error => {
+        console.log(error.response.data);
+        // Handle error
+      });
+  }
+
     return (
-      <div className="login">
-        <div className="landinglogo"><img src={logo} alt="TESLA"/></div>
-        <div className="login-box">
-            <h1>Log in</h1>
-            <div className="loginform">
-                <form className="loginformtag">
-                <div><input type="text" value="User name"/></div>
-                <div><input type="text" value="Password"/></div>
-                <p>Log in</p>
-                </form>
-                <p>Don't have an account?</p>
-                <p>Create Account</p>
-            </div>
-        </div>
-      </div>
+      <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+      </label>
+      <label>
+        Age:
+        <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
+      </label>
+      <button type="submit">Create User</button>
+    </form>
     );
   }
 
