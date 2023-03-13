@@ -9,15 +9,14 @@ default: &default
 development:
   <<: *default
   database: Full_Stack_Capstone_Group_development
-  username: "postgres"
-  password: "FullStackDev@2023"
-
+  username: lucca
+  password: 1134638066
 
 test:
   <<: *default
   database: Full_Stack_Capstone_Group_test
-  username: "postgres"
-  password: "FullStackDev@2023"
+  username: lucca
+  password: 1134638066
 
 
 
