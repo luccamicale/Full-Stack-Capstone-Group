@@ -33,15 +33,16 @@ function Login({ setLogin }) {
       <h1>Log in</h1>
       <p className="error-msg" style={{ color: 'red' }}>{error}</p>
       <div className='login-box'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-form">
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username"/>
 
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-
+          <br />
           <button type="submit">Log in</button>
         </form>
        <div>
           <p>Don't have an account?</p>
+          <br />
           <NavLink className="link-item" to="/signup"  >
             Sign Up
           </NavLink>

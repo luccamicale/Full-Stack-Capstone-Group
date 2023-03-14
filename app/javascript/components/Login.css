@@ -1,14 +1,37 @@
+.login-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-box{
-  display: block;
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  position: fixed;
-  right: 2%;
-  top: 30%;
   height: 40vh;
-  width: 10vw;
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  width:80%;
+  margin-top: 5%;
+  align-self: center;
+}
+
+.login-form button {
+  align-self: center;
+  width:80%;
 }
