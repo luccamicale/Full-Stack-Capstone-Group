@@ -60,7 +60,7 @@ function NavBar({ setProduct, userId }) {
             </li>
 
             <li>
-              <NavLink className="link-item" to="/login" onClick={() => localStorage.clear('user')} style={{ color: '#fff', border: 'solid 1px red', backgroundColor: 'red', borderRadius: '5px' }}>
+              <NavLink className="link-item" to="/" onClick={() => localStorage.clear('user')} style={{ color: '#fff', border: 'solid 1px red', backgroundColor: 'red', borderRadius: '5px' }}>
                 logout
               </NavLink>
             </li>
@@ -68,7 +68,7 @@ function NavBar({ setProduct, userId }) {
 
           {(!userId) && <><li>
 
-            <NavLink className="link-item" to="/" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
+            <NavLink className="link-item" to="/login" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
               Log in
             </NavLink>
           </li>
