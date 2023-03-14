@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 function Login({ setLogin }) {
 
@@ -38,6 +38,12 @@ function Login({ setLogin }) {
 
         <button type="submit">Log in</button>
       </form>
+      <div>
+        <p>Don't have an account?</p>
+        <NavLink className="link-item" to="/signup"  >
+          Sign Up
+        </NavLink>
+      </div>
     </div>
   );
 }
