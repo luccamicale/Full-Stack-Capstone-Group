@@ -1,41 +1,45 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-//import axios from 'axios';
-//import { fetchUsers } from '../redux/registration/Registration';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({ setLogin }) {
 
   const path = '/Home';
   const navigate = useNavigate();
-  const [username, setUsername] = useState('Username');
-  const [password, setPassword] = useState('Password');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const users = useSelector((state) => state.users.users);
-  console.log(`users.username= ${users}`)
-  //const usernameArray = users.username.split()
-  if(users.username === username) {
-  
-    handleSubmit();
+  const [error, setError] = useState('');
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (username !== '' || password !== '') {
+     const loginUser = users.filter((user) => user.username === username && user.password === password)
+      if (loginUser.length > 0) {
+        localStorage.setItem('user', JSON.stringify(loginUser[0]));
+        setLogin(true);
+      } else {
+        setError('Please enter valid user name and password')
+      }
+    } else {
+      setError('Please enter valid user name and password');
     }
- 
-    const handleSubmit = (e) =>{
-      e.preventDefault();
-      const userData = {username,password};
-    navigate(path);
-    }
-  
+  }
 
-    return (
+
+  return (
+    <div className="login-container">
+      <h1>Log in</h1>
+      <p className="error-msg" style={{ color: 'red' }}>{error}</p>
       <form onSubmit={handleSubmit}>
-              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      
-        <input type="number" value={password} onChange={(e) => setPassword(e.target.value)} />
-      
-      <button type="submit">Log in</button>
-    </form>
-    );
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username"/>
+
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+        <button type="submit">Log in</button>
+      </form>
+    </div>
+  );
 }
 
-  export default Login;
+export default Login;

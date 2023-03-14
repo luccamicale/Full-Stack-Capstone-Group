@@ -1,35 +1,77 @@
 import React from "react";
-import logo from './img/logo.png';
-//import './Login.css'
-//import fetchUsers from '../redux/registration/Registration';
-import { useSelector , useDispatch } from "react-redux";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import logo from "./img/logo.png";
+import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
 import { createUser } from "../redux/registration/Registration";
+import { fetchUsers } from "../redux/registration/Registration";
+
 function Signup() {
+  const {userStatus, users }= useSelector((state) => state.users);
   const dispatch = useDispatch();
-  const [username, setUsername] = useState('username');
-  const [password, setPassword] = useState('Password');
- 
-  const handleSubmit = (e) =>{
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [successMsg, setSuccessMsg] = useState(false);
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const userData = {username,password};
-    dispatch(createUser(userData));
-  }
+    if (username !== "" || password !== "") {
+      const userData = { username, password };
+      dispatch(createUser(userData));
+    } else {
+      alert("please fill all fields");
+    }
+  };
+
+  useEffect(() => {
+    if (userStatus === "fulfilled") {
+      setSuccessMsg(true);
+      dispatch(fetchUsers());
+      setTimeout(() => {
+        navigate("/login");
+        setSuccessMsg(false);
+      }, 2000);
+    }
+  }, [userStatus]);
+
   return (
-      <div className="signup">
-        <div className="landinglogo"><img src={logo} alt="TESLA"/></div>
-        <div className="signup-box">
-            <h1>Log in</h1>
-            <div className="signupform">
-                <form className="signupformtag" onSubmit={handleSubmit}>
-                <div><input type="text" value={username} onChange={(e) => setUsername(e.target.value) }/></div>
-                <div><input type="text" value={password}  onChange={(e) => setPassword(e.target.value) }/></div>
-                <button type="submit">Signup</button>
-                </form>
+    <div className="signup">
+      <div className="landinglogo">
+        <img src={logo} alt="TESLA" />
+      </div>
+      <div className="signup-box">
+        <h1>Sign up</h1>
+        {successMsg && (
+          <div className="success-msg" style={{ color: 'green' }}>
+            User created successfully
+          </div>
+        )}
+        <div className="signupform">
+          <form className="signupformtag" onSubmit={handleSubmit}>
+            <div>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="username"
+              />
             </div>
+            <div>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit">Signup</button>
+          </form>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export default Signup;
+export default Signup;
