@@ -75,3 +75,5 @@ end
 
 # Add 'rack-cors'
 gem 'rack-cors'
+# Add rswag
+gem 'rswag'
