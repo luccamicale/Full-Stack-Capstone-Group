@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, NavLink } from 'react-router-dom';
+import './Login.css';
 
 function Login({ setLogin }) {
 
@@ -31,18 +32,20 @@ function Login({ setLogin }) {
     <div className="login-container">
       <h1>Log in</h1>
       <p className="error-msg" style={{ color: 'red' }}>{error}</p>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username"/>
+      <div className='login-box'>
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username"/>
 
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-        <button type="submit">Log in</button>
-      </form>
-      <div>
-        <p>Don't have an account?</p>
-        <NavLink className="link-item" to="/signup"  >
-          Sign Up
-        </NavLink>
+          <button type="submit">Log in</button>
+        </form>
+       <div>
+          <p>Don't have an account?</p>
+          <NavLink className="link-item" to="/signup"  >
+            Sign Up
+          </NavLink>
+        </div>
       </div>
     </div>
   );
