@@ -2,8 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const url = 'http://127.0.0.1:3000/api/v1/signup';
+const usersUrl = 'http://127.0.0.1:3000/api/v1/users';
 
-export const fetchUsers = createAsyncThunk('FETCHUSERS', () => axios.get(url)
+export const fetchUsers = createAsyncThunk('FETCHUSERS', () => axios.get(usersUrl)
   .then((response) => {
     const users = response.data;
     return users;
@@ -22,17 +23,6 @@ export const createUser = createAsyncThunk(
         return response;
       });
 
-// export const cancelReservation = createAsyncThunk(
-//   'reservations/cancelReservation',
-//   async (reservationId) => {
-//     const requestOptions = {
-//       method: 'DELETE',
-//       headers: { 'Content-Type': 'application/json; charset=UTF-8' },
-//     };
-//     const response = await fetch(`${url}/${reservationId}`, requestOptions)
-//       .then((data) => data.json())
-//     return response;
-//   });      
 
 const userSlice = createSlice({
   name: 'user',
@@ -40,12 +30,10 @@ const userSlice = createSlice({
     users: [],
     userStatus : '',
     getUserStatus: '',
- //   cancelStatus: ''
   },
   reducers: {
     updateUserStatus: (state, action) => {
       state.userStatus = action.payload;
-    //  state.cancelStatus = action.payload;
       return state;
     },
   },
@@ -60,8 +48,10 @@ const userSlice = createSlice({
       return state
     })
     .addCase(fetchUsers.fulfilled, (state, action) => {
-      state.users = action.payload
-      state.getUserStatus = "fulfilled"
+      if(action.payload.length > 0) {
+        state.getUserStatus = "fulfilled"
+        state.users = action.payload
+      }
       return state
     })
     .addCase(createUser.pending, (state, action) => {
@@ -69,29 +59,15 @@ const userSlice = createSlice({
       return state
     })
     .addCase(createUser.rejected, (state, action) => {
-      state.reserveStatus = "rejected"
+      state.userStatus = "rejected";
       return state
     })
     .addCase(createUser.fulfilled, (state, action) => {
-      if (action.payload.date != null) {
+      if (action.payload.username != null) {
         state.userStatus = "fulfilled"
       }
       return state
     })
-    // .addCase(cancelReservation.pending, (state, action) => {
-    //   state.cancelStatus = "pending"
-    //   return state
-    // })
-    // .addCase(cancelReservation.rejected, (state, action) => {
-    //   state.cancelStatus = "rejected"
-    //   return state
-    // })
-    // .addCase(cancelReservation.fulfilled, (state, action) => {
-    //   if (action.payload.message == 'reservation deleted') {
-    //     state.cancelStatus = "fulfilled"
-    //   }
-    //   return state
-    // })
   },
 });
 

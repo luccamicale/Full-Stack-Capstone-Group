@@ -5,32 +5,32 @@ import { cancelReservation } from "../redux/reservation/Reservation";
 import { updateReservationStatus } from "../redux/reservation/Reservation";
 import './reservation.css'
 
-function Reservations() {
+function Reservations({ userId }) {
   const { reservations, getReservationStatus, cancelStatus } = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   const [successMsg, setSuccess] = useState(false);
   const [bgImg, setBgImg] = useState('');
   let reserveImg = []
+  let filterReservations = []
 
   if (reservations.length > 0) {
     reservations.forEach(res => {
       reserveImg.push(res.product.image)
     })
+    filterReservations = reservations.filter(res => res.user_id === userId)
   }
 
   useEffect(() => {
     if (reserveImg.length > 0) {
       setInterval(() => {
         let nextImg = reserveImg[Math.floor(Math.random() * reserveImg.length)]
-        if(nextImg === bgImg) {
+        if (nextImg === bgImg) {
           nextImg = reserveImg[Math.floor(Math.random() * reserveImg.length)]
         }
         setBgImg(nextImg)
       }, 5000)
     } else { setBgImg('') }
   }, [reserveImg]);
-
-  console.log(reserveImg)
 
   useEffect(() => {
     if (cancelStatus === "fulfilled") {
@@ -68,7 +68,7 @@ function Reservations() {
           <th>City</th>
           <th>Actions</th>
         </tr>
-        {reservations.map((reservation) =>
+        {filterReservations.map((reservation) =>
           <tr>
             <td>{reservation.date}</td>
             <td>{reservation.product.name}</td>
