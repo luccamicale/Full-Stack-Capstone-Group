@@ -73,11 +73,7 @@ function NavBar({ setProduct, userId }) {
             </NavLink>
           </li>
 
-            <li>
-              <NavLink className="link-item" to="/signup" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
-                Sign Up
-              </NavLink>
-            </li></>}
+          </>}
         </ul>
 
       </div>
