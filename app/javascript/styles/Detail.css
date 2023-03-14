@@ -14,15 +14,20 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  height: 100vh;
+  height: 10vh;
   border-radius: 2px;
   padding: 30px 5px 5px 5px;
   margin: 30px auto;
 }
 
+.product-name-model {
+  font-size: 38px;
+}
+
 .product-image {
-  width: 100%;
+  width: 80%;
   height: auto;
+  border-radius: 10%;
 }
 
 .body-description {
@@ -40,11 +45,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #bbb;
+  color: #97bf0f;
+  font-size: 23px;
 }
 
 .text-label {
   padding-right: 10px;
+  font-size: 23px;
 }
 
 .btn-reserve-from-detail {
@@ -55,7 +62,7 @@
   width: 100px;
   padding: 5px;
   border: none;
-  margin-top: 100px;
+  margin-top: 10px;
   font-size: 16px;
   transition: 0.5s ease-in-out;
 }
@@ -63,6 +70,16 @@
 .btn-reserve-from-detail:hover {
   background-color: #1dbe28;
   border: solid 1px #1dbe28;
+}
+
+.description {
+  text-align: center;
+  width: 90%;
+}
+
+hr {
+  color: #252525;
+  width: 80%;
 }
 
 @media only screen and (min-width: 768px) {
