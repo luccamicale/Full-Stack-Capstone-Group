@@ -4,7 +4,7 @@ import '../components/navbar.css'
 import logo from '../components/img/logo.gif';
 
 
-function NavBar({ setProduct, userId }) {
+const NavBar = ({ setProduct, userId }) => {
 
   const [clicked, setClicked] = useState(false)
   const navigate = useNavigate()
