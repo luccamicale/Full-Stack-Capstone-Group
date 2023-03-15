@@ -84,7 +84,7 @@
 
 > cooming soon!
 
-- [Live Demo Link](https://reserve-tesla-car.onrender.com/)
+- [Live Demo Link](https://reserve-tesla-car.onrender.com).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
