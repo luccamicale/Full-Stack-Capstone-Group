@@ -12,13 +12,13 @@ const Detail = ({setProduct}) => {
   const navigate = useNavigate();
 
   const product = useSelector((state) => state.product);
-  console.log(`product in details page= ${product}`);
+  
   const dispatch = useDispatch();
-  console.log(product);
+  
 
   const params = useParams();
   const idProduct = Number(params.id);
-  console.log(`params= ${params}`);
+  
 
   useEffect(() => {
     dispatch(fetchProduct(idProduct));
