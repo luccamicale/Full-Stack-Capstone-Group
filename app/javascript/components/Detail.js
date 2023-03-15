@@ -50,7 +50,7 @@ const Detail = ({setProduct}) => {
             <h5>DISCOVER MORE MODELS</h5>
 
         <button type='button' className='btn-reserve-from-detail' onClick={() => { setProduct(product.id); navigate('/reservationForm') }}> Reserve</button>
-        <img src={loggg} alt="Loading" className='load-details' />
+        <img src="https://s2.gifyu.com/images/paleta3e4aa115cbaf08d6.gif" alt="Loading" className='load-details' />
          </div>
         </div>
 
