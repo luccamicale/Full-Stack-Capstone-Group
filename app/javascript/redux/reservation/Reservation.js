@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'https://reserve-tesla-car.onrender.com/api/v1/reservations';
+const url = 'http://127.0.0.1:3000/api/v1/reservations';
 
 export const fetchReservations = createAsyncThunk('FETCHRESERVATIONS', () => axios.get(url)
   .then((response) => {
