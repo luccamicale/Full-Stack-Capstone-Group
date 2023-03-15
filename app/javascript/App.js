@@ -16,7 +16,7 @@ import Products from './components/Products';
 import { fetchUsers } from './redux/registration/Registration';
 
 
-function App() {
+const App = () => {
   const [user, setUser] = useState(null);
   const [product, setProduct] = useState(null);
   const [login, setLogin] = useState(false);

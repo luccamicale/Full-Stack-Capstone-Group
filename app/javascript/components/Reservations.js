@@ -5,7 +5,7 @@ import { cancelReservation } from "../redux/reservation/Reservation";
 import { updateReservationStatus } from "../redux/reservation/Reservation";
 import './reservation.css'
 
-function Reservations({ userId }) {
+const Reservations = ({ userId }) => {
   const { reservations, getReservationStatus, cancelStatus } = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   const [successMsg, setSuccess] = useState(false);

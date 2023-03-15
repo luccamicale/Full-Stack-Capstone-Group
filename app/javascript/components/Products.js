@@ -5,17 +5,15 @@ import { cancelProduct } from "../redux/detail/Detail";
 import { updateStatus } from "../redux/detail/Detail";
 import '../styles/Products.css';
 
-function Products() {
+const Products = () => {
   const products = useSelector((state) => state.homes);
   const status = products.status;
   const cancelStatus = useSelector((state) => state.product.cancelStatus);
   const dispatch = useDispatch();
   const [successMsg, setSuccess] = useState(false);
 
-console.log(`Cancel status = ${cancelStatus}`)
   useEffect(() => {
     if (cancelStatus === "fulfilled") {
-      console.log(`Cancel status fulfilled = ${cancelStatus}`);
       setSuccess(true);
       dispatch(fetchHomes());
       setTimeout(() => {

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate, NavLink } from 'react-router-dom';
 import './Login.css';
 
-function Login({ setLogin }) {
+const Login = ({ setLogin }) => {
 
   const path = '/Home';
   const navigate = useNavigate();

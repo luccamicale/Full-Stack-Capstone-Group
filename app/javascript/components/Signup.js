@@ -7,7 +7,7 @@ import { createUser } from "../redux/registration/Registration";
 import { fetchUsers } from "../redux/registration/Registration";
 import './Signup.css';
 
-function Signup() {
+const Signup = () => {
   const { userStatus, users } = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
