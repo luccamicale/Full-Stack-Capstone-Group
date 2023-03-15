@@ -14,16 +14,16 @@ RSpec.describe 'Register User', type: :request do
         required: %w[username password]
       }
 
-      response '200', 'Sign up success' do
+      response '201', 'Sign up success' do
         let(:user) do
-          { user: { username: 'Lucas Bermudez', password: '123456'} }
+          { user: { username: 'Amare Mekonnen', password: '123456'} }
         end
         run_test!
       end
 
-      response '422', 'invalid request' do
+      response '503', 'Invalid request' do
         let(:user) do
-          { user: { username: 'Hans Zizold' } }
+          { user: { username: 'Amare Mekonnen' } }
         end
         run_test!
       end

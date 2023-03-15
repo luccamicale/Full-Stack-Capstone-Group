@@ -9,19 +9,16 @@ RSpec.describe 'api/v1/products', type: :request do
   # index
   describe 'products API' do
     path '/api/v1/products' do
-      get 'fetch data to the teachers table' do
-        tags 'data from the teachers route'
+      get 'fetch Products' do
+        tags 'Products'
         produces 'application/json', 'application/xml'
-        response '200', 'List of data fetched' do
+        response '200', 'List of products' do
           schema type: :array,
                  properties: {
-                   id: { type: :integer },
                    name: { type: :string },
                    image: { type: :string },
                    price: { type: :decimal },
-                   description: { type: :text },
-                   created_at: { type: :datetime },
-                   updated_at: { type: :datetime }
+                   description: { type: :text }
                  },
                  required: %w[name image price description]
           run_test!
@@ -52,7 +49,7 @@ RSpec.describe 'api/v1/products', type: :request do
           run_test!
         end
 
-        response '503', 'invalid request' do
+        response '503', 'Invalid request' do
           let(:product_params) { {} }
           run_test!
         end
@@ -67,7 +64,6 @@ RSpec.describe 'api/v1/products', type: :request do
         parameter name: :id, in: :path, schema: {
           type: :object,
           properties: {
-            id: { type: :integer },
             name: {type: :string},
             image: {type: :string},
             price: { type: :decimal },

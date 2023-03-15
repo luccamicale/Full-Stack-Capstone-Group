@@ -139,10 +139,12 @@ paths:
       - Sign Up
       parameters: []
       responses:
+        '201':
+          description: Sign up success
+        '503':
+          description: invalid request
         '200':
           description: successful
-        '422':
-          description: invalid request
       requestBody:
         content:
           application/json:

@@ -30,7 +30,7 @@ class Api::V1::ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     if @reservation.destroy
-      render json: { message: 'reservation deleted' }, status: 200
+      render json: { message: 'Reservation deleted successfully!' }, status: 200
     else
       render json: { errors: @reservation.errors.full_messages }, status: 503
     end
@@ -39,7 +39,7 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:date, :product_id, :city, :user_id)
+    params.permit(:date, :product_id, :city, :user_id)
   end
 
   def find_reservation
