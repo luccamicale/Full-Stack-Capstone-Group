@@ -13,7 +13,6 @@ const ProductForm = () => {
   const dispatch = useDispatch();
   const [messageCreateProduct, setMessageCreateProduct] = useState(false);
   const createProductStatus = useSelector((state) => state.product.status);
-  console.log(`message stattus==${createProductStatus}`)
   const placeholderTextarea = 'Enter some description about the product';
   const placeholderPrice = 'Price';
 

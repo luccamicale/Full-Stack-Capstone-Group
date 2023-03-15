@@ -12,10 +12,8 @@ const Products = () => {
   const dispatch = useDispatch();
   const [successMsg, setSuccess] = useState(false);
 
-console.log(`Cancel status = ${cancelStatus}`)
   useEffect(() => {
     if (cancelStatus === "fulfilled") {
-      console.log(`Cancel status fulfilled = ${cancelStatus}`);
       setSuccess(true);
       dispatch(fetchHomes());
       setTimeout(() => {
