@@ -87,7 +87,7 @@ const reservationSlice = createSlice({
       return state
     })
     .addCase(cancelReservation.fulfilled, (state, action) => {
-      if (action.payload.message == 'reservation deleted') {
+      if (action.payload.message == 'Reservation deleted successfully!') {
         state.cancelStatus = "fulfilled"
       }
       return state

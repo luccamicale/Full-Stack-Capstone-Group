@@ -88,7 +88,7 @@ RSpec.describe 'api/v1/products', type: :request do
         consumes 'application/json'
         parameter name: :id, in: :path, type: :integer
 
-        response '204', 'Product deleted successfully' do
+        response '200', 'Product deleted successfully' do
           let(:id) { @product.id }
           run_test!
         end

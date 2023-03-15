@@ -14,10 +14,10 @@ function Reservations({ userId }) {
   let filterReservations = []
 
   if (reservations.length > 0) {
-    reservations.forEach(res => {
+    filterReservations = reservations.filter(res => res.user_id === userId)
+    filterReservations.forEach(res => {
       reserveImg.push(res.product.image)
     })
-    filterReservations = reservations.filter(res => res.user_id === userId)
   }
 
   useEffect(() => {
