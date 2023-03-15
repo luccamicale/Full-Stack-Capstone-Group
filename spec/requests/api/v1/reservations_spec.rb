@@ -4,16 +4,16 @@ RSpec.describe 'api/v1/reservations', type: :request do
   before(:each) do
     @user = User.create!(username: 'amare', password: '1234567')
     @product = Product.create!(name: 'model 14', image: 'https://images.prismic.io/drive-electric/5119970b-fb90-48dc-b479-18e9f9ec1dcf_0x0-ModelY_01.jpg?auto=compress,format&rect=881,1253,2462,1293&w=1200&h=630&fit=crop',
-    price: 20000, description: 'heloo world geyjjj kllllllllllllllllllll  jhhhhhhhh')
+                               price: 20_000, description: 'heloo world geyjjj kllllllllllllllllllll  jhhhhhhhh')
     @reservation = Reservation.create!(date: '2023-04-25', city: 'Addis Ababa', user_id: @user.id,
-    product_id: @product.id)
+                                       product_id: @product.id)
   end
 
   # index
   describe 'Reservations API' do
     path '/api/v1/reservations' do
-      get 'fetch Reservations' do
-        tags 'data from the reservations route'
+      get 'Fetch all Reservations' do
+        tags 'All reservations'
         produces 'application/json', 'application/xml'
         response '200', 'List of Reservations' do
           schema type: :array,
@@ -33,7 +33,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
 
     path '/api/v1/reservations' do
       post 'Creates a reservation' do
-        tags 'Reservation'
+        tags 'Show a reservation'
         consumes 'application/json'
         parameter name: :reservation_params, in: :body, schema: {
           type: :object,
@@ -58,11 +58,10 @@ RSpec.describe 'api/v1/reservations', type: :request do
       end
     end
 
-
     # # delete
     path '/api/v1/reservations/{id}' do
       delete 'Delete a reservation' do
-        tags 'Reservations'
+        tags 'Delete a reservation'
         consumes 'application/json'
         parameter name: :id, in: :path, type: :integer
 

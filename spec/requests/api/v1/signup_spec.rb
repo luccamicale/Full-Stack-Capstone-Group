@@ -16,7 +16,7 @@ RSpec.describe 'Register User', type: :request do
 
       response '201', 'Sign up success' do
         let(:user) do
-          { user: { username: 'Amare Mekonnen', password: '123456'} }
+          { user: { username: 'Amare Mekonnen', password: '123456' } }
         end
         run_test!
       end
