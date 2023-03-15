@@ -15,7 +15,7 @@ function Login({ setLogin }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username !== '' || password !== '') {
-     const loginUser = users.filter((user) => user.username === username && user.password === password)
+      const loginUser = users.filter((user) => user.username === username && user.password === password)
       if (loginUser.length > 0) {
         localStorage.setItem('user', JSON.stringify(loginUser[0]));
         setLogin(true);
@@ -30,24 +30,25 @@ function Login({ setLogin }) {
 
   return (
     <div className="login-container">
-      <div className="login-logo"><img src="https://s2.gifyu.com/images/logo87cfadd86b233016.gif" alt="TESLA"/></div>
-      <h1>Log in</h1>
+      <div className="login-logo"><img src="https://s2.gifyu.com/images/logo87cfadd86b233016.gif" alt="TESLA" /></div>
       <p className="error-msg" style={{ color: 'red' }}>{error}</p>
       <div className='login-box'>
+        <h1>Log in</h1>
         <form onSubmit={handleSubmit} className="login-form">
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="username"/>
+          <div className="form-input">
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
+          </div>
 
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <br />
-          <button type="submit">Log in</button>
+          <div className="form-input">
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+          </div>
+          <button type="submit" className="login-btn">Log in</button>
+          <div className="signup-link">
+            <NavLink to="/signup"  >
+              Don't have an account? Sign Up
+            </NavLink>
+          </div>
         </form>
-       <div>
-          <p>Don't have an account?</p>
-          <br />
-          <NavLink className="link-item" to="/signup"  >
-            Sign Up
-          </NavLink>
-        </div>
       </div>
     </div>
   );

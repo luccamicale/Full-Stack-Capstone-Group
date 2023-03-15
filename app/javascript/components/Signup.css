@@ -1,54 +1,93 @@
-.login-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-box {
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: 50vh;
+  width: 50%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.signup-logo img {
+  width: 50vw;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-input {
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid rgba(098, 5, 5, 0.18);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.signup-btn {
+  background-color: #90bd00;
+  color: #fff;
+  width: 20%;
+  padding: 3px 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px;
+  border: #90bd00 1px solid;
+  height: 36px;
+  font-size: large;
+}
+
+.signup-btn-btn:hover {
+  background-color: #625656;
+  color: #90bd00;
+  border: #90bd00 1px solid;
+}
+
+.signup-logo {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .signup-box {
+    width: 95%;
   }
-  
-  .signup-box{
-    background: rgba(255, 255, 255, 0.55);
-    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    height: 40vh;
-    width: 85vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+
+  .signup-btn {
+    width: 50%;
   }
-  
-  .signup-logo img {
-    width: 50vw;
-    position: absolute;
-    top: 4%;
-    left: 2%;
+
+  .form-input {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
   }
-  
-  .signup-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .signup-form input {
-    width:80%;
-    margin-top: 5%;
-    align-self: center;
-  }
-  
-  .signup-form button {
-    align-self: center;
-    width:80%;
-  }
-  
-  .signup-container p {
-    margin-left: 25%;
-  }
-  
-  .signup-container a {
-    margin-left: 32%;
-    color: dimgray;
-    font-family: monospace;
-  }
+}
