@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'https://localhost:3000/api/v1/signup';
-const usersUrl = 'https://localhost:3000/api/v1/users';
+const url = 'http://localhost:3000/api/v1/signup';
+const usersUrl = 'http://localhost:3000/api/v1/users';
 
 export const fetchUsers = createAsyncThunk('FETCHUSERS', () => axios.get(usersUrl)
   .then((response) => {

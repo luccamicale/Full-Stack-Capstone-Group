@@ -3,7 +3,159 @@ openapi: 3.0.1
 info:
   title: API V1
   version: v1
-paths: {}
+paths:
+  "/api/v1/products":
+    get:
+      summary: fetch data to the teachers table
+      tags:
+      - data from the teachers route
+      responses:
+        '200':
+          description: List of data fetched
+          content:
+            application/json:
+              schema:
+                type: array
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  image:
+                    type: string
+                  price:
+                    type: decimal
+                  description:
+                    type: text
+                  created_at:
+                    type: datetime
+                  updated_at:
+                    type: datetime
+                required:
+                - name
+                - image
+                - price
+                - description
+            application/xml:
+              schema:
+                type: array
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  image:
+                    type: string
+                  price:
+                    type: decimal
+                  description:
+                    type: text
+                  created_at:
+                    type: datetime
+                  updated_at:
+                    type: datetime
+                required:
+                - name
+                - image
+                - price
+                - description
+    post:
+      summary: Creates a product
+      tags:
+      - Product
+      parameters: []
+      responses:
+        '201':
+          description: Product created
+        '503':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                image:
+                  type: string
+                price:
+                  type: decimal
+                description:
+                  type: text
+              required:
+              - name
+              - image
+              - price
+              - description
+  "/api/v1/products/{id}":
+    get:
+      summary: show a product
+      tags:
+      - Product
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            image:
+              type: string
+            price:
+              type: decimal
+            description:
+              type: description
+          required:
+          - id
+          - name
+          - image
+          - price
+          - description
+        required: true
+      responses:
+        '200':
+          description: Product found
+    delete:
+      summary: Delete a product
+      tags:
+      - Products
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Product deleted
+  "/api/v1/signup":
+    post:
+      summary: create user
+      tags:
+      - Sign Up
+      parameters: []
+      responses:
+        '200':
+          description: successful
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+              - username
+              - password
 servers:
 - url: https://{defaultHost}
   variables:
