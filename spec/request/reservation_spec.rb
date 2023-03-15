@@ -1,3 +1,4 @@
+require 'rails_helper'
 RSpec.describe Api::V1::ReservationsController, type: :controller do
   describe 'GET #index' do
     it 'returns a success response' do

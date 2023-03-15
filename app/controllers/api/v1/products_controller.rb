@@ -31,7 +31,7 @@ class Api::V1::ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     if @product.destroy
-      render json: { message: 'product deleted' }, status: 200
+      render json: { message: 'product deleted' }, status: 204
     else
       render json: { errors: @product.errors.full_messages }, status: 503
     end
@@ -40,7 +40,7 @@ class Api::V1::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :image, :price, :description)
+    params.permit(:name, :image, :price, :description)
   end
 
   def find_product
