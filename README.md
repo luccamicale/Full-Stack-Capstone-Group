@@ -116,11 +116,17 @@ Example commands:
 
 Install this project with:
 
-Run bundle install
+-rails db:create, rails db:migrate, rails db:seed
+
+-Run bundle install
 
 ### Usage
 
 To run the project, execute the following command:
+
+-npm install
+
+-npm run build
 
 ```sh
   rails server
