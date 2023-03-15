@@ -9,14 +9,14 @@ default: &default
 development:
   <<: *default
   database: Full_Stack_Capstone_Group_development
-  username: lucca
-  password: 1134638066
+  username: oklukeok
+  password: rogstrix
 
 test:
   <<: *default
   database: Full_Stack_Capstone_Group_test
-  username: lucca
-  password: 1134638066
+  username: oklukeok
+  password: rogstrix
 
 
 
