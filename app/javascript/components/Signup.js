@@ -48,7 +48,7 @@ function Signup() {
             User created successfully
           </div>
         )}
-        <div className="signupform">
+        <div className="signup-form">
           <form className="signupformtag" onSubmit={handleSubmit}>
             <div>
               <input
