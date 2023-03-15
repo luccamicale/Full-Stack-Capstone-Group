@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function Home() {
+const Home = () => {
   const homes = useSelector((state) => state.homes);
 
   const settings = {

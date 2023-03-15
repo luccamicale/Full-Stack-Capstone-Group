@@ -8,7 +8,7 @@ import logo from './img/logo.gif';
 
 import '../styles/Detail.css';
 
-function Detail({setProduct}) {
+const Detail = ({setProduct}) => {
   const navigate = useNavigate();
 
   const product = useSelector((state) => state.product);
