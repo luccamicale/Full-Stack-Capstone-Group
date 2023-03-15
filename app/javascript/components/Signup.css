@@ -5,7 +5,7 @@
     align-items: center;
   }
   
-  .login-box{
+  .signup-box{
     background: rgba(255, 255, 255, 0.55);
     box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
     backdrop-filter: blur(5.5px);
@@ -27,27 +27,27 @@
     left: 2%;
   }
   
-  .login-form {
+  .signup-form {
     display: flex;
     flex-direction: column;
   }
   
-  .login-form input {
+  .signup-form input {
     width:80%;
     margin-top: 5%;
     align-self: center;
   }
   
-  .login-form button {
+  .signup-form button {
     align-self: center;
     width:80%;
   }
   
-  .login-container p {
+  .signup-container p {
     margin-left: 25%;
   }
   
-  .login-container a {
+  .signup-container a {
     margin-left: 32%;
     color: dimgray;
     font-family: monospace;

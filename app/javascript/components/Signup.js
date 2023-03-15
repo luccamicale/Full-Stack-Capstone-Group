@@ -39,11 +39,10 @@ function Signup() {
 
   return (
     <div className="signup">
-      <div className="signup-logo">
-        <img src={logo} alt="TESLA" />
-      </div>
+      <div className="signup-logo"><img src="https://s2.gifyu.com/images/logo87cfadd86b233016.gif" alt="TESLA" /></div>
+      <h1>Sign up</h1>
       <div className="signup-box">
-        <h1>Sign up</h1>
+        
         {successMsg && (
           <div className="success-msg" style={{ color: 'green' }}>
             User created successfully
