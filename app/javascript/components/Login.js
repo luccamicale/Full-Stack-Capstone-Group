@@ -30,6 +30,7 @@ function Login({ setLogin }) {
 
   return (
     <div className="login-container">
+      <div className="login-logo"><img src="https://s2.gifyu.com/images/logo87cfadd86b233016.gif" alt="TESLA"/></div>
       <h1>Log in</h1>
       <p className="error-msg" style={{ color: 'red' }}>{error}</p>
       <div className='login-box'>

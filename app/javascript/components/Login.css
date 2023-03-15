@@ -20,6 +20,13 @@
   align-content: center;
 }
 
+.login-logo img {
+  width: 50vw;
+  position: absolute;
+  top: 4%;
+  left: 2%;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -34,4 +41,14 @@
 .login-form button {
   align-self: center;
   width:80%;
+}
+
+.login-container p {
+  margin-left: 25%;
+}
+
+.login-container a {
+  margin-left: 32%;
+  color: dimgray;
+  font-family: monospace;
 }
