@@ -8,7 +8,7 @@ import { fetchUsers } from "../redux/registration/Registration";
 import './Signup.css';
 
 function Signup() {
-  const {userStatus, users }= useSelector((state) => state.users);
+  const { userStatus, users } = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -38,37 +38,34 @@ function Signup() {
   }, [userStatus]);
 
   return (
-    <div className="signup">
+    <div className="signup-container">
       <div className="signup-logo"><img src="https://s2.gifyu.com/images/logo87cfadd86b233016.gif" alt="TESLA" /></div>
-      <h1>Sign up</h1>
+
+      <p className="success-msg" style={{ color: 'green' }}>
+        {successMsg && 'User created successfully'}
+      </p>
+      
       <div className="signup-box">
-        
-        {successMsg && (
-          <div className="success-msg" style={{ color: 'green' }}>
-            User created successfully
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <h1>Sign up</h1>
+          <div className="form-input">
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="username"
+            />
           </div>
-        )}
-        <div className="signup-form">
-          <form className="signupformtag" onSubmit={handleSubmit}>
-            <div>
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="username"
-              />
-            </div>
-            <div>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit">Signup</button>
-          </form>
-        </div>
+          <div className="form-input">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" className="signup-btn">Signup</button>
+        </form>
       </div>
     </div>
   );
