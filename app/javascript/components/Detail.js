@@ -4,6 +4,7 @@ import { fetchProduct } from '../redux/detail/Detail';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import logo from './img/logo.png';
+import loggg from './img/loggg.png'
 
 import '../styles/Detail.css';
 
@@ -29,23 +30,26 @@ function Detail({setProduct}) {
 
           <img src={product.image} className="product-image"></img>
          <div className='body-description'>
-          <h3 className='product-name'>{product.name}</h3>
+          <h2 className='product-name-model'>{product.name}</h2>
+          <hr></hr>
 
             <div className='data-row'>
-              <p className='text-label'>
+              <h4 className='text-label'>
                 Product price
-              </p>
+              </h4>
               <p>
                 {product.price}
               </p>
             </div>
 
-            <p>
+            <p className='description'>
               {product.description}
             </p>
 
-        <button type='button' className='btn-reserve-from-detail' onClick={() => { setProduct(product.id); navigate('/reservationForm') }}> Reserve</button>
+            <h5>DISCOVER MORE MODELS</h5>
 
+        <button type='button' className='btn-reserve-from-detail' onClick={() => { setProduct(product.id); navigate('/reservationForm') }}> Reserve</button>
+        <img src={loggg} alt="Loading" className='load-details' />
          </div>
         </div>
 

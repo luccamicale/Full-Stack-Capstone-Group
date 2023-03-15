@@ -31,7 +31,7 @@ function NavBar({ setProduct, userId }) {
           </li>
             <li className="link-item">
               <NavLink className="item" to="/Home" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
-                Home
+                Cars
               </NavLink>
             </li>
 
@@ -43,25 +43,25 @@ function NavBar({ setProduct, userId }) {
 
             <li>
               <NavLink className="link-item" to="/Reservations" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
-                Reservations
+                My Reservations
               </NavLink>
             </li>
 
             <li>
               <NavLink className="link-item" to="/new-product" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
-                Add product
+                Add Cars
               </NavLink>
             </li>
 
             <li>
               <NavLink className="link-item" to="/Products" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
-                Delete product
+                Delete Cars
               </NavLink>
             </li>
 
             <li>
               <NavLink className="link-item" to="/" onClick={() => localStorage.clear('user')} style={{ color: '#fff', border: 'solid 1px red', backgroundColor: 'red', borderRadius: '5px' }}>
-                logout
+                Logout
               </NavLink>
             </li>
           </>}
