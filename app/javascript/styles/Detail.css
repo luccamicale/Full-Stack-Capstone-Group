@@ -86,6 +86,10 @@ hr {
   display: none;
 }
 
+.logo-details {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   .product-wrapper {
     display: flex;
@@ -96,7 +100,8 @@ hr {
     border: 3px solid #97bf0f;
     height: 550px;
     width: 750px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
   }
 
   .product-image {
@@ -118,5 +123,13 @@ hr {
   .container-img-discover {
     display: flex;
     flex-direction: row;
+  }
+
+  .logo-details {
+    width: 20%;
+    position: absolute;
+    margin-right: 1150px;
+    margin-top: -30px;
+    display: flex;
   }
 }

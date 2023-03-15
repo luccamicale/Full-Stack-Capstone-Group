@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchProduct } from '../redux/detail/Detail';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import logo from './img/logo.png';
-import loggg from './img/loggg.png'
+import loggg from './img/loggg.png';
+import logo from './img/logo.gif';
 
 import '../styles/Detail.css';
 
@@ -27,6 +27,7 @@ function Detail({setProduct}) {
   return (
 
         <div className='product-wrapper'>
+          <img src={logo} alt="Logo" className='logo-details' />
 
           <img src={product.image} className="product-image"></img>
          <div className='body-description'>
