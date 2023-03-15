@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { createUser } from "../redux/registration/Registration";
 import { fetchUsers } from "../redux/registration/Registration";
+import './Signup.css';
 
 function Signup() {
   const {userStatus, users }= useSelector((state) => state.users);
@@ -38,7 +39,7 @@ function Signup() {
 
   return (
     <div className="signup">
-      <div className="landinglogo">
+      <div className="signup-logo">
         <img src={logo} alt="TESLA" />
       </div>
       <div className="signup-box">
