@@ -27,7 +27,7 @@ function Detail({setProduct}) {
   return (
 
         <div className='product-wrapper'>
-          <img src={logo} alt="Logo" className='logo-details' />
+          <img src="https://s2.gifyu.com/images/logo87cfadd86b233016.gif" alt="Logo" className='logo-details' />
 
           <img src={product.image} className="product-image"></img>
          <div className='body-description'>

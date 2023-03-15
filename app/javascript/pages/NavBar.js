@@ -26,7 +26,7 @@ function NavBar({ setProduct, userId }) {
 
           {(userId) && <> <li className="link-item">
             <NavLink className="item" to="/" onClick={handleClick} style={({ isActive }) => (isActive ? { color: '#fff', border: 'solid 1px #1dbe28', backgroundColor: '#1dbe28' } : { color: 'black' })}>
-              <img src={logo} alt="TESLA" className='menulogo' />
+              <img src="https://s2.gifyu.com/images/logo87cfadd86b233016.gif" alt="TESLA" className='menulogo' />
             </NavLink>
           </li>
             <li className="link-item">
