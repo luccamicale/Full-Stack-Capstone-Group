@@ -1,0 +1,135 @@
+:root {
+  --green: #97bf0f;
+  --yellow: #96bf0d;
+  --blue: #10bbb5;
+  --black: #252525;
+  --white: #fff;
+}
+
+.product-wrapper {
+  min-width: 375px;
+  max-width: 767.98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  height: 10vh;
+  border-radius: 2px;
+  padding: 30px 5px 5px 5px;
+  margin: 30px auto;
+}
+
+.product-name-model {
+  font-size: 38px;
+}
+
+.product-image {
+  width: 80%;
+  height: auto;
+  border-radius: 10%;
+}
+
+.body-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-name {
+  padding-bottom: 20px;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #97bf0f;
+  font-size: 23px;
+}
+
+.text-label {
+  padding-right: 10px;
+  font-size: 23px;
+}
+
+.btn-reserve-from-detail {
+  background-color: var(--yellow);
+  color: #fff;
+  border-radius: 30px;
+  height: 36px;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: 0.5s ease-in-out;
+}
+
+.btn-reserve-from-detail:hover {
+  background-color: #1dbe28;
+  border: solid 1px #1dbe28;
+}
+
+.description {
+  text-align: center;
+  width: 90%;
+}
+
+hr {
+  color: #252525;
+  width: 80%;
+}
+
+.load-details {
+  display: none;
+}
+
+.logo-details {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    border: 3px solid #97bf0f;
+    height: 550px;
+    width: 750px;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+  }
+
+  .product-image {
+    width: 420px;
+    height: 250px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+
+  .load-details {
+    position: absolute;
+    margin-top: 350px;
+    margin-right: 990px;
+    width: 114px;
+    display: flex;
+  }
+
+  .container-img-discover {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo-details {
+    width: 20%;
+    position: absolute;
+    margin-right: 1150px;
+    margin-top: -30px;
+    display: flex;
+  }
+}

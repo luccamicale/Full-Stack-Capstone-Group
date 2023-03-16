@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: Full_Stack_Capstone_Group_development
+
+test:
+  <<: *default
+  database: Full_Stack_Capstone_Group_test
+
+
+
+production:
+  <<: *default
+  database: carbooking
+  url: <%= ENV['DATABASE_URL'] %>
