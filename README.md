@@ -16,6 +16,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [Kanban Board](#kanban-board)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -85,6 +86,25 @@
 > cooming soon!
 
 - [Live Demo Link](https://reserve-tesla-car.onrender.com).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🚀 Kanban Board <a name="kanban-board"></a>
+
+
+- [Kanban Board Link](https://github.com/luccamicale/Full-Stack-Capstone-Group/issues/21).
+
+- [Kanban Board image](https://user-images.githubusercontent.com/107897361/222282693-dbb04aaa-1ce8-4ae1-b80a-b87782c767bf.png).
+
+
+
+
+- ## Project Requirements
+
+- ## In this project, we worked 4 members
+
+-  [Github link](https://github.com/luccamicale/Full-Stack-Capstone-Group/tree/dev).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
