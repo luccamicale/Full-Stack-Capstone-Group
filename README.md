@@ -2,7 +2,7 @@
 
 
 <div align="center">
-  
+
   <br/>
 
   <h3><b>Final Capstone Project</b></h3>
@@ -35,15 +35,15 @@
 
 # 📖 [Final Capstone Project] <a name="about-project"></a>
 
-> Final Capstone Project it's a fullstack app made with Ruby on Rails for the back-end and react for the front-end.
+> Final Capstone Project it's a fullstack app developed with Ruby on Rails for the back-end and react for the front-end.
 
-**[Final Capstone project]** is an app made thinking on a electric car manufacturer where you can check all the available models and you can reserve a test a drive.
+**Final Capstone project** is an app made thinking on a electric car manufacturer where you can check all the available models and you can reserve a test a drive.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-- Made with Ruby on Rails and React
+- Developed with Ruby on Rails and React
 
 <details>
   <summary>Client</summary>
@@ -69,7 +69,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
 
 - **[One page app]**
 - **[Diferent car models available]**
@@ -111,7 +110,6 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -136,20 +134,24 @@ Example commands:
 
 Install this project with:
 
--rails db:create, rails db:migrate, rails db:seed
+```sh
+bundle install
 
--Run bundle install
+Then run
+rails db:create, rails db:migrate, rails db:seed
+
+```
 
 ### Usage
 
 To run the project, execute the following command:
 
--npm install
-
--npm run build
-
 ```sh
-  rails server
+   npm install
+
+   npm run build
+
+  ./bin/dev
 ```
 
 
@@ -157,7 +159,10 @@ To run the project, execute the following command:
 
 To run tests, run the following command:
 
-run rspec
+run the following command
+```sh
+rspec
+```
 
 ### Deployment
 
@@ -170,7 +175,6 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 
 👤 **Lucas Bermudez**
 
@@ -203,8 +207,6 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
 - [ ] **[Buy Section]**
 - [ ] **[Private Section]**
 - [ ] **[New Models Cars]**
@@ -219,34 +221,28 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/luccamicale/Full-Stack-Capstone-Group/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
 
-If you like this project hit the ⭐️ button!
+If you like this project, hit the ⭐️ button!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
 
-I would like to thank the design provided by Murat Korkmaz on Behance.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+We would like to thank the design provided by Murat Korkmaz on Behance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
 
